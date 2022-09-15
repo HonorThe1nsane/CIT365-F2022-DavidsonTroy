@@ -31,7 +31,7 @@ namespace MyFirstConsoleApplication
             };
 
 
-            Console.WriteLine($"I have never been to {person.Location} I bet it is a nice place. Press any key to continue...");
+            Console.WriteLine($"I have never been to {person.Location}. I bet it is a nice place. Press any key to continue...");
         }
     }
 
