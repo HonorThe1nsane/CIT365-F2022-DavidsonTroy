@@ -40,7 +40,7 @@ namespace MyFirstConsoleApplication
 
             
             Console.WriteLine($"I have never been to {pLocation}. I bet it is a nice place. ");
-            Console.WriteLine($"Press any key to continue.");
+            Console.WriteLine($"Press any key to continue...");
 
 
              Console.ReadKey();
@@ -58,7 +58,7 @@ namespace MyFirstConsoleApplication
             DateTime christmas = DateTime.Parse("12/25/2022");
             string daysToXmas = (christmas - today).Days.ToString();
             Console.WriteLine($"There are {daysToXmas} days until Christmas!");
-            Console.WriteLine("Press any key to continue.");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
 
@@ -68,7 +68,8 @@ namespace MyFirstConsoleApplication
         private static void PromptForExit()
         {
             Console.WriteLine("Press any key to exit...");
-            
+            Console.ReadKey();
+
 
         }
     
