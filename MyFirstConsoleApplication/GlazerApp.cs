@@ -30,8 +30,7 @@ namespace MyFirstConsoleApplication
             
             Console.WriteLine($"The length of the wood is {woodLength} feet");
             Console.WriteLine($"The area of the glass is {glassArea} square metres");
-            Console.WriteLine($"Press any key to continue...");
-            Console.ReadKey();
+            
 
         }
     }
