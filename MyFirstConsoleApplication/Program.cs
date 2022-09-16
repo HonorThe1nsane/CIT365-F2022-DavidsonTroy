@@ -36,9 +36,11 @@ namespace MyFirstConsoleApplication
 
 
             
-            Console.WriteLine($"I have never been to {pLocation}. I bet it is a nice place. Press any key to continue.");
-           
-            Console.ReadKey();
+            Console.WriteLine($"I have never been to {pLocation}. I bet it is a nice place. ");
+            Console.WriteLine($"Press any key to continue.");
+
+
+             Console.ReadKey();
             var person = new Person
             {
                 Name = personName,
@@ -48,15 +50,18 @@ namespace MyFirstConsoleApplication
         
         private static void ChristmasCountDown()
         {
-            DateTime today = DateTime.Now;
-            Console.WriteLine($"Today's date is {today}");
+            DateTime today = DateTime.Today;
+            Console.WriteLine($"Today's date is {today.ToString("MM/dd/yyyy")}");
             DateTime christmas = DateTime.Parse("12/25/2022");
             string daysToXmas = (christmas - today).Days.ToString();
             Console.WriteLine($"There are {daysToXmas} days until Christmas!");
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
         }
-        
+
+  
+
+
         private static void PromptForExit()
         {
             Console.WriteLine("Press any key to exit...");
