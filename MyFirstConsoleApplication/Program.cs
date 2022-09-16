@@ -13,6 +13,16 @@ namespace MyFirstConsoleApplication
             //Get the user name and location
             GetUserNameAndLocation();
 
+            //Christmas countdown
+            ChristmasCountDown();
+
+            //Prompt for exit
+
+            PromptForExit();
+            
+            
+            
+
 
         }
 
@@ -31,7 +41,22 @@ namespace MyFirstConsoleApplication
             };
 
             Console.WriteLine($"I have never been to {person.Location}. I bet it is a nice place. Press any key to continue...");
+            Console.ReadKey();
         }
+
+        private static void ChristmasCountDown()
+        {
+            DateTime dateTime = DateTime.Now;
+            Console.WriteLine($"Today's date is {dateTime}");
+        }
+        
+        private static void PromptForExit()
+        {
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+
+        }
+    
     }
 
 
