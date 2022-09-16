@@ -45,11 +45,16 @@ namespace MyFirstConsoleApplication
                 Location = pLocation
             };
         }
-
+        
         private static void ChristmasCountDown()
         {
-            DateTime dateTime = DateTime.Now;
-            Console.WriteLine($"Today's date is {dateTime}");
+            DateTime today = DateTime.Now;
+            Console.WriteLine($"Today's date is {today}");
+            DateTime christmas = DateTime.Parse("12/25/2022");
+            string daysToXmas = (christmas - today).Days.ToString();
+            Console.WriteLine($"There are {daysToXmas} days until Christmas!");
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey();
         }
         
         private static void PromptForExit()
