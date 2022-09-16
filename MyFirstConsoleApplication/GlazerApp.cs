@@ -13,13 +13,13 @@ namespace MyFirstConsoleApplication
             double width, height, woodLength, glassArea;
             string widthString, heightString;
             //Get the width
-            Console.WriteLine($"What is the width?:");
+            Console.WriteLine($"What is the width of your wood in feet?:");
             widthString = Console.ReadLine();
             //Convert to a double
             width = double.Parse(widthString);
 
             //Get the height
-            Console.WriteLine($"What is the height?:");
+            Console.WriteLine($"What is the height of your wood in feet?:");
             heightString = Console.ReadLine();
             //Convert to a double
             height = double.Parse(heightString);

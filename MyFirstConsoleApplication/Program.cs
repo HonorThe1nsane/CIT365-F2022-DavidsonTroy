@@ -16,6 +16,9 @@ namespace MyFirstConsoleApplication
             //Christmas countdown
             ChristmasCountDown();
 
+            //Glass calculator
+            GlazerApp.RunExample();
+
             //Prompt for exit
 
             PromptForExit();
