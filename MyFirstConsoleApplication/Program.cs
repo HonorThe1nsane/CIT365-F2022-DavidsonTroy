@@ -43,7 +43,7 @@ namespace MyFirstConsoleApplication
             Console.WriteLine($"Press any key to continue...");
 
 
-             Console.ReadKey();
+            Console.ReadKey();
             var person = new Person
             {
                 Name = personName,
