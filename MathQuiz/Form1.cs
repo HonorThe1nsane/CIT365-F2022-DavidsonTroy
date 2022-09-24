@@ -218,7 +218,8 @@ namespace MathQuiz
         }
 
 
-
+        //Tried to delete these but it wouldn't let me. Deleted them before but it broke my design file. Had to completely rebuild it again.
+        //Researched how to remove them but couldn't find anything.
 
 
         private void timeLabel_Click(object sender, EventArgs e)
