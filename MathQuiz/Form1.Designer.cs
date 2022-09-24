@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timeLabel = new System.Windows.Forms.Label();
             this.plusLeftLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -358,6 +359,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.plusLeftLabel);
             this.Controls.Add(this.timeLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Troy Davidson - Math Quiz";
             this.Load += new System.EventHandler(this.Form1_Load_1);
