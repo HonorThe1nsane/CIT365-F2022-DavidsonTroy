@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace MegaDesk__Davidson
@@ -41,7 +42,11 @@ namespace MegaDesk__Davidson
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            
+            DisplayQuote viewQuote = new DisplayQuote();
+            viewQuote.Tag = this;
+            viewQuote.Show(this);
+            Hide();
+
 
         }
 
@@ -80,24 +85,19 @@ namespace MegaDesk__Davidson
 
         private void DeskWidthInput_Validating(object sender, CancelEventArgs e)
         {
+            bool res;
             if (string.IsNullOrEmpty(DeskWidthInput.Text))
             {
                 e.Cancel = true;
                 DeskWidthInput.Focus();
                 errorWDesk.SetError(DeskWidthInput, "Please enter a width");
             }
-            else
+            else if (DeskDepthInput.Text != null)
             {
-                e.Cancel = false;
-                errorWDesk.SetError(DeskWidthInput, null);
-
-            }
 
 
-            if (DeskWidthInput.Text != null)
-            {
                 int number = Int32.Parse(DeskWidthInput.Text);
-                if(number < 24 || number > 96)
+                if (number < 24 || number > 96)
                 {
                     e.Cancel = true;
                     DeskWidthInput.Focus();
@@ -112,8 +112,14 @@ namespace MegaDesk__Davidson
                 }
 
             }
-                
-            
+            else
+            {
+                e.Cancel = false;
+                errorWDesk.SetError(DeskWidthInput, null);
+
+            }
+
+
         }
 
         private void DeskDepthInput_Validating(object sender, CancelEventArgs e)
@@ -124,14 +130,16 @@ namespace MegaDesk__Davidson
                 DeskDepthInput.Focus();
                 errorDDesk.SetError(DeskDepthInput, "Please enter your the depth");
             }
+            else if (Regex.IsMatch(DeskDepthInput.Text, @"^\d+$") != true)
+            {
+                e.Cancel = true;
+                DeskDepthInput.Focus();
+                errorDDesk.SetError(DeskDepthInput, "Please enter your the depth with a valid number");
+            }
 
             else
             {
-                e.Cancel = false;
-                errorDDesk.SetError(DeskDepthInput, null);
-            }
-            if (DeskDepthInput.Text != null)
-            {
+
                 int number = Int32.Parse(DeskDepthInput.Text);
                 if (number < 12 || number > 48)
                 {
@@ -146,8 +154,8 @@ namespace MegaDesk__Davidson
                     errorDDesk.SetError(DeskDepthInput, null);
 
                 }
-
             }
+
 
         }
 
@@ -159,13 +167,7 @@ namespace MegaDesk__Davidson
                 NumDrawersInput.Focus();
                 errorNumDrawers.SetError(NumDrawersInput, "Please enter your the number of drawers");
             }
-            else
-            {
-                e.Cancel = false;
-                errorNumDrawers.SetError(NumDrawersInput, null);
-            }
-
-            if (NumDrawersInput.Text != null)
+            else if (NumDrawersInput.Text != null)
             {
                 int number = Int32.Parse(NumDrawersInput.Text);
                 if (number < 0 || number > 7)
@@ -183,6 +185,13 @@ namespace MegaDesk__Davidson
                 }
 
             }
+            else
+            {
+                e.Cancel = false;
+                errorNumDrawers.SetError(NumDrawersInput, null);
+
+            }
+
 
 
         }

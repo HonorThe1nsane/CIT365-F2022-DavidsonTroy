@@ -57,7 +57,7 @@
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.Location = new System.Drawing.Point(122, 324);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(163, 51);
+            this.exitBtn.Size = new System.Drawing.Size(170, 51);
             this.exitBtn.TabIndex = 8;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             this.searchQuotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchQuotes.Location = new System.Drawing.Point(122, 238);
             this.searchQuotes.Name = "searchQuotes";
-            this.searchQuotes.Size = new System.Drawing.Size(163, 51);
+            this.searchQuotes.Size = new System.Drawing.Size(170, 51);
             this.searchQuotes.TabIndex = 7;
             this.searchQuotes.Text = "Search Quotes";
             this.searchQuotes.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             this.viewQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewQuote.Location = new System.Drawing.Point(122, 152);
             this.viewQuote.Name = "viewQuote";
-            this.viewQuote.Size = new System.Drawing.Size(163, 51);
+            this.viewQuote.Size = new System.Drawing.Size(170, 51);
             this.viewQuote.TabIndex = 6;
             this.viewQuote.Text = "View Quotes";
             this.viewQuote.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             this.newQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newQuote.Location = new System.Drawing.Point(122, 75);
             this.newQuote.Name = "newQuote";
-            this.newQuote.Size = new System.Drawing.Size(163, 51);
+            this.newQuote.Size = new System.Drawing.Size(170, 51);
             this.newQuote.TabIndex = 5;
             this.newQuote.Text = "Add New Quote";
             this.newQuote.UseVisualStyleBackColor = true;
