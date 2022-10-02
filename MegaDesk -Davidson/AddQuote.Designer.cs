@@ -42,8 +42,8 @@
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.selectedMaterial = new System.Windows.Forms.ComboBox();
-            this.shipRushDays = new System.Windows.Forms.ComboBox();
+            this.SelectedMaterial = new System.Windows.Forms.ComboBox();
+            this.ShipRushDays = new System.Windows.Forms.ComboBox();
             this.submitBtn = new System.Windows.Forms.Button();
             this.errorFname = new System.Windows.Forms.ErrorProvider(this.components);
             this.FirstNameInput = new System.Windows.Forms.TextBox();
@@ -85,7 +85,6 @@
             resources.ApplyResources(this.DeskWidthInput, "DeskWidthInput");
             this.DeskWidthInput.Name = "DeskWidthInput";
             this.DeskWidthInput.Validating += new System.ComponentModel.CancelEventHandler(this.DeskWidthInput_Validating);
-            this.DeskWidthInput.Validated += new System.EventHandler(this.submitBtn_Click);
             // 
             // label5
             // 
@@ -129,19 +128,19 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click_1);
             // 
-            // selectedMaterial
+            // SelectedMaterial
             // 
-            this.selectedMaterial.FormattingEnabled = true;
-            resources.ApplyResources(this.selectedMaterial, "selectedMaterial");
-            this.selectedMaterial.Name = "selectedMaterial";
-            this.selectedMaterial.Validating += new System.ComponentModel.CancelEventHandler(this.selectedMaterial_Validating);
+            this.SelectedMaterial.FormattingEnabled = true;
+            resources.ApplyResources(this.SelectedMaterial, "SelectedMaterial");
+            this.SelectedMaterial.Name = "SelectedMaterial";
+            this.SelectedMaterial.Validating += new System.ComponentModel.CancelEventHandler(this.selectedMaterial_Validating);
             // 
-            // shipRushDays
+            // ShipRushDays
             // 
-            this.shipRushDays.FormattingEnabled = true;
-            resources.ApplyResources(this.shipRushDays, "shipRushDays");
-            this.shipRushDays.Name = "shipRushDays";
-            this.shipRushDays.Validating += new System.ComponentModel.CancelEventHandler(this.shipRushDays_Validating);
+            this.ShipRushDays.FormattingEnabled = true;
+            resources.ApplyResources(this.ShipRushDays, "ShipRushDays");
+            this.ShipRushDays.Name = "ShipRushDays";
+            this.ShipRushDays.Validating += new System.ComponentModel.CancelEventHandler(this.shipRushDays_Validating);
             // 
             // submitBtn
             // 
@@ -159,7 +158,6 @@
             resources.ApplyResources(this.FirstNameInput, "FirstNameInput");
             this.FirstNameInput.Name = "FirstNameInput";
             this.FirstNameInput.Validating += new System.ComponentModel.CancelEventHandler(this.FirstNameInput_Validating);
-            this.FirstNameInput.Validated += new System.EventHandler(this.submitBtn_Click);
             // 
             // LastNameInput
             // 
@@ -198,8 +196,8 @@
             this.Controls.Add(this.LastNameInput);
             this.Controls.Add(this.FirstNameInput);
             this.Controls.Add(this.submitBtn);
-            this.Controls.Add(this.shipRushDays);
-            this.Controls.Add(this.selectedMaterial);
+            this.Controls.Add(this.ShipRushDays);
+            this.Controls.Add(this.SelectedMaterial);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.lastNameLabel);
             this.Controls.Add(this.firstNameLabel);
@@ -238,8 +236,8 @@
         private System.Windows.Forms.Label firstNameLabel;
         private System.Windows.Forms.Label lastNameLabel;
         private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.ComboBox selectedMaterial;
-        private System.Windows.Forms.ComboBox shipRushDays;
+        private System.Windows.Forms.ComboBox SelectedMaterial;
+        private System.Windows.Forms.ComboBox ShipRushDays;
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.ErrorProvider errorFname;
         private System.Windows.Forms.TextBox LastNameInput;

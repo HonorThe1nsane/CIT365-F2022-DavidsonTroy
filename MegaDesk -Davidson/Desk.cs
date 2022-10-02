@@ -15,7 +15,7 @@ namespace MegaDesk__Davidson
         
         int RushDays { get; set; }
 
-       
+
 
         public Desk(float width, float depth, int drawers, int rush)
         {
@@ -25,7 +25,11 @@ namespace MegaDesk__Davidson
             RushDays = rush;
         }
 
-
+        public float GetSurfaceArea()
+        {
+            SurfaceArea = DeskWidth * DeskDepth;
+            return SurfaceArea;
+        }
 
     }
 

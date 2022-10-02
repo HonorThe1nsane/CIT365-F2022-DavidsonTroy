@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
+using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -7,20 +9,20 @@ namespace MegaDesk__Davidson
 {
     public partial class AddQuote : Form
     {
+       
+
+
         public AddQuote()
         {
             InitializeComponent();
-            selectedMaterial.DataSource = Enum.GetValues(typeof(SurfaceMaterial));
-            shipRushDays.DataSource = Enum.GetValues(typeof(shipDays));
-       
-            
+            SelectedMaterial.DataSource = Enum.GetValues(typeof(SurfaceMaterial));
+            ShipRushDays.DataSource = Enum.GetValues(typeof(shipDays));
+
+           
         }
 
-        private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            MainMenu mainMenu = (MainMenu)Tag;
-            mainMenu.Show();
-        }
+
+    
 
         
       
@@ -34,58 +36,138 @@ namespace MegaDesk__Davidson
             this.DeskWidthInput.CausesValidation = false;
             this.DeskDepthInput.CausesValidation = false;
             this.NumDrawersInput.CausesValidation = false;
-            this.selectedMaterial.CausesValidation = false;
+            this.SelectedMaterial.CausesValidation = false;
             mainMenu.Show();
             Close();
 
         }
-
+        
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            DisplayQuote viewQuote = new DisplayQuote();
-            viewQuote.Tag = this;
-            viewQuote.Show(this);
-            Hide();
+            //Grab the info from the form
+            string firstName = FirstNameInput.Text;
+            string lastName = LastNameInput.Text;
+            int width = Int32.Parse(DeskWidthInput.Text);
+            int depth = Int32.Parse(DeskDepthInput.Text);
+            int drawers = Int32.Parse(NumDrawersInput.Text);
+            string material = SelectedMaterial.Text;
+            int rush = 0;
+            if (ShipRushDays.Text == "Three" )
+            {
+                rush = 3;
+
+            }
+            else if(ShipRushDays.Text == "Five")
+            {
+                rush = 5;
+            }
+            else if(ShipRushDays.Text == "Seven")
+            {
+                rush = 7;
+            }
+            else
+            {
+                rush = 14;
+            }
+
+           
+
+
+
+            Desk desk = new Desk(width, depth, drawers, rush);
+            float surfaceArea = desk.GetSurfaceArea();
+
+            
+
+
+            //process data
+            DeskQuote newQuote = new DeskQuote(firstName, lastName, width, drawers, material, rush);
+            
+            float quotePrice = newQuote.GetQuotePrice();
+            float shipPrice = newQuote.calcShipping();
+            float calMaterialPrice = newQuote.calcSurfaceMaterial();
+            float drawerPrice = newQuote.calcDrawers();
+
+            
+
+
+            
+          /*  using (DisplayQuote displayQuote = new DisplayQuote())
+            {
+                if (displayQuote.ShowDialog() == DialogResult.OK)
+                {
+                    firstName = displayQuote.FirstName;
+                }
+                if (displayQuote.ShowDialog() == DialogResult.OK)
+                {
+                    lastName = displayQuote.LastName;
+                }
+                if (displayQuote.ShowDialog() == DialogResult.OK)
+                {
+                    width = displayQuote.Width;
+                }
+                if (displayQuote.ShowDialog() == DialogResult.OK)
+                {
+                    depth = displayQuote.Depth;
+                }
+                if (displayQuote.ShowDialog() == DialogResult.OK)
+                {
+                    drawers = displayQuote.Drawers;
+                }
+                if (displayQuote.ShowDialog() == DialogResult.OK)
+                {
+                    material = displayQuote.Material;
+                }
+                if (displayQuote.ShowDialog() == DialogResult.OK)
+                {
+                    rush = displayQuote.Rush;
+                }
+            }*/
+            var m = new DisplayQuote();
+            m.Show();
+            Close();
 
 
         }
 
         private void FirstNameInput_Validating(object sender, CancelEventArgs e)
-        { 
-             if (string.IsNullOrEmpty(FirstNameInput.Text))
+        {
+
+            if (string.IsNullOrEmpty(FirstNameInput.Text))
             {
                 e.Cancel = true;
                 FirstNameInput.Focus();
-                errorFname.SetError(FirstNameInput, "Please enter your first name");
-            } else
-            {
-                e.Cancel = false;
-                errorFname.SetError(FirstNameInput, null);
-            }
-
-
-        }
-
-        private void LastNameInput_Validating(object sender, CancelEventArgs e)
-        {
-
-            if (string.IsNullOrEmpty(LastNameInput.Text))
-            {
-                e.Cancel = true;
-                LastNameInput.Focus();
-                errorLname.SetError(LastNameInput, "Please enter your last name");
+                errorFname.SetError(FirstNameInput, "Please enter your First Name");
+         
             }
             else
             {
                 e.Cancel = false;
                 errorLname.SetError(LastNameInput, null);
+
+            }
+        }
+
+        private void LastNameInput_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(LastNameInput.Text))
+            {
+                e.Cancel = true;
+                LastNameInput.Focus();
+                errorLname.SetError(LastNameInput, "Please enter your Last Name");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorLname.SetError(LastNameInput, null);
+
             }
 
         }
 
         private void DeskWidthInput_Validating(object sender, CancelEventArgs e)
         {
-            bool res;
+           
             if (string.IsNullOrEmpty(DeskWidthInput.Text))
             {
                 e.Cancel = true;
@@ -196,35 +278,15 @@ namespace MegaDesk__Davidson
 
         }
 
+
+
         private void selectedMaterial_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(selectedMaterial.Text))
-            {
-                e.Cancel = true;
-                selectedMaterial.Focus();
-                errorSurfMat.SetError(selectedMaterial, "Please select your desk material");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorSurfMat.SetError(selectedMaterial, null);
-            }
 
         }
 
         private void shipRushDays_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(shipRushDays.Text))
-            {
-                e.Cancel = true;
-                shipRushDays.Focus();
-                errorRushDays.SetError(shipRushDays, "Please select your the number of rush days or select none");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorRushDays.SetError(shipRushDays, null);
-            }
 
         }
     }

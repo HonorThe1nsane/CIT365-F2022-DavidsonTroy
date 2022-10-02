@@ -460,7 +460,7 @@
     <value>100, 23</value>
   </data>
   <data name="cancelBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>7</value>
   </data>
   <data name="cancelBtn.Text" xml:space="preserve">
     <value>Cancel Quote</value>
@@ -477,49 +477,49 @@
   <data name="&gt;&gt;cancelBtn.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="selectedMaterial.IntegralHeight" type="System.Boolean, mscorlib">
+  <data name="SelectedMaterial.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="selectedMaterial.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SelectedMaterial.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 310</value>
   </data>
-  <data name="selectedMaterial.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectedMaterial.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 21</value>
   </data>
-  <data name="selectedMaterial.TabIndex" type="System.Int32, mscorlib">
+  <data name="SelectedMaterial.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;selectedMaterial.Name" xml:space="preserve">
-    <value>selectedMaterial</value>
+  <data name="&gt;&gt;SelectedMaterial.Name" xml:space="preserve">
+    <value>SelectedMaterial</value>
   </data>
-  <data name="&gt;&gt;selectedMaterial.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectedMaterial.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;selectedMaterial.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectedMaterial.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;selectedMaterial.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SelectedMaterial.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="shipRushDays.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ShipRushDays.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 364</value>
   </data>
-  <data name="shipRushDays.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ShipRushDays.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 21</value>
   </data>
-  <data name="shipRushDays.TabIndex" type="System.Int32, mscorlib">
+  <data name="ShipRushDays.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;shipRushDays.Name" xml:space="preserve">
-    <value>shipRushDays</value>
+  <data name="&gt;&gt;ShipRushDays.Name" xml:space="preserve">
+    <value>ShipRushDays</value>
   </data>
-  <data name="&gt;&gt;shipRushDays.Type" xml:space="preserve">
+  <data name="&gt;&gt;ShipRushDays.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;shipRushDays.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ShipRushDays.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;shipRushDays.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ShipRushDays.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="submitBtn.Font" type="System.Drawing.Font, System.Drawing">
@@ -535,7 +535,7 @@
     <value>100, 23</value>
   </data>
   <data name="submitBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>7</value>
   </data>
   <data name="submitBtn.Text" xml:space="preserve">
     <value>Submit Order</value>
