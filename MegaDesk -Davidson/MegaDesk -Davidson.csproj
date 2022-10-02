@@ -55,14 +55,8 @@
     <Compile Include="Desk.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Desk.Designer.cs">
-      <DependentUpon>Desk.cs</DependentUpon>
-    </Compile>
     <Compile Include="DeskQuote.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeskQuote.Designer.cs">
-      <DependentUpon>DeskQuote.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchQuotes.cs">
       <SubType>Form</SubType>
@@ -95,9 +89,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddQuote.resx">
       <DependentUpon>AddQuote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeskQuote.resx">
-      <DependentUpon>DeskQuote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayQuote.resx">
       <DependentUpon>DisplayQuote.cs</DependentUpon>
