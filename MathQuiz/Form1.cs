@@ -124,6 +124,10 @@ namespace MathQuiz
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
                 startButton.Enabled = true;
+    
+                timeLabel.BackColor = default(Color);
+
+                
             }
             else if (timeLeft > 0)
             {
@@ -137,6 +141,7 @@ namespace MathQuiz
                 {
                     timeLabel.BackColor = Color.Red;
                 }
+                
 
             }
 
