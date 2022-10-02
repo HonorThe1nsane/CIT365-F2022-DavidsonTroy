@@ -1,6 +1,6 @@
 ﻿namespace MegaDesk__Davidson
 {
-    partial class Form1
+    partial class DisplayQuote
     {
         /// <summary>
         /// Required designer variable.
@@ -37,4 +37,3 @@
         #endregion
     }
 }
-
