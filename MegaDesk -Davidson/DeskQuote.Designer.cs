@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "DeskQuote";
-            this.Text = "MainMenu - Davidson";
+            this.Text = "Desk Quote";
             this.ResumeLayout(false);
 
         }

@@ -16,5 +16,10 @@ namespace MegaDesk__Davidson
         {
             InitializeComponent();
         }
+
+        private void DisplayQuote_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
