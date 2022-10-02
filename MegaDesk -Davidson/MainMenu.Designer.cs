@@ -52,6 +52,8 @@
             // 
             // exitBtn
             // 
+            this.exitBtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuText;
+            this.exitBtn.FlatAppearance.BorderSize = 4;
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.Location = new System.Drawing.Point(122, 324);
             this.exitBtn.Name = "exitBtn";
@@ -63,6 +65,8 @@
             // 
             // searchQuotes
             // 
+            this.searchQuotes.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuText;
+            this.searchQuotes.FlatAppearance.BorderSize = 4;
             this.searchQuotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchQuotes.Location = new System.Drawing.Point(122, 238);
             this.searchQuotes.Name = "searchQuotes";
@@ -74,6 +78,8 @@
             // 
             // viewQuote
             // 
+            this.viewQuote.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuText;
+            this.viewQuote.FlatAppearance.BorderSize = 4;
             this.viewQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewQuote.Location = new System.Drawing.Point(122, 152);
             this.viewQuote.Name = "viewQuote";
@@ -85,8 +91,8 @@
             // 
             // newQuote
             // 
-            this.newQuote.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.newQuote.FlatAppearance.BorderSize = 3;
+            this.newQuote.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuText;
+            this.newQuote.FlatAppearance.BorderSize = 4;
             this.newQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newQuote.Location = new System.Drawing.Point(122, 75);
             this.newQuote.Name = "newQuote";

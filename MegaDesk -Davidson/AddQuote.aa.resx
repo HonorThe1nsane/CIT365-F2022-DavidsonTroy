@@ -118,26 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 362</value>
+  <data name="RushDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 30</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 362</value>
   </data>
-  <data name="textBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 315</value>
+  <data name="SurfaceMaterial.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
   </data>
-  <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 249</value>
+  <data name="NumDrawers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
   </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 191</value>
+  <data name="DeskDepth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 130</value>
+  <data name="DeskWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 68</value>
+  <data name="CustomerName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 20</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 310</value>
@@ -153,6 +153,16 @@
   </data>
   <data name="fullName.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 63</value>
+  </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>395, 68</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 20</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>New Quote</value>
