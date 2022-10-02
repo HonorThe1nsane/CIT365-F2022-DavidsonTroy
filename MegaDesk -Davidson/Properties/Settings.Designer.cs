@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaDesk___Davidson.Properties
+namespace MegaDesk__Davidson.Properties
 {
 
 

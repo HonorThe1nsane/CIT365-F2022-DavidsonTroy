@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk___Davidson
+namespace MegaDesk__Davidson
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace MegaDesk___Davidson
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenu());
+            Application.Run(new Form1());
         }
     }
 }

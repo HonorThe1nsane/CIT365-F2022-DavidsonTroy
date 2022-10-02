@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk___Davidson
+namespace MegaDesk__Davidson
 {
     public partial class Form1 : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace MegaDesk___Davidson
+﻿namespace MegaDesk__Davidson
 {
     partial class Form1
     {

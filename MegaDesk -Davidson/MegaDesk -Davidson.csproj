@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{61708C06-882C-43DE-A338-76957CB8161C}</ProjectGuid>
+    <ProjectGuid>{3A3CA374-BB8A-4B2A-BA8E-DD9782129AC0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MegaDesk___Davidson</RootNamespace>
-    <AssemblyName>MegaDesk - Davidson</AssemblyName>
+    <RootNamespace>MegaDesk__Davidson</RootNamespace>
+    <AssemblyName>MegaDesk -Davidson</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
