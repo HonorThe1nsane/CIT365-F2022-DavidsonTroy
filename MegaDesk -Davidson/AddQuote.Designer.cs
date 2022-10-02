@@ -1,6 +1,6 @@
 ﻿namespace MegaDesk__Davidson
 {
-    partial class AddQuote
+    public class AddQuote
     {
         /// <summary>
         /// Required designer variable.
@@ -29,59 +29,59 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddQuote));
-            this.RushDays = new System.Windows.Forms.ListBox();
+            this.RushDaysInput = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.SurfaceMaterial = new System.Windows.Forms.TextBox();
-            this.NumDrawers = new System.Windows.Forms.TextBox();
-            this.DeskDepth = new System.Windows.Forms.TextBox();
-            this.DeskWidth = new System.Windows.Forms.TextBox();
-            this.CustomerName = new System.Windows.Forms.TextBox();
+            this.SurfaceMaterialInput = new System.Windows.Forms.TextBox();
+            this.NumDrawersInput = new System.Windows.Forms.TextBox();
+            this.DeskDepthInput = new System.Windows.Forms.TextBox();
+            this.DeskWidthInput = new System.Windows.Forms.TextBox();
+            this.FirstNameInput = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.fullName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.firstName = new System.Windows.Forms.Label();
-            this.lastName = new System.Windows.Forms.Label();
+            this.LastNameInput = new System.Windows.Forms.TextBox();
+            this.firstNameLabel = new System.Windows.Forms.Label();
+            this.lastNameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // RushDays
+            // RushDaysInput
             // 
-            this.RushDays.FormattingEnabled = true;
-            resources.ApplyResources(this.RushDays, "RushDays");
-            this.RushDays.Name = "RushDays";
-            this.RushDays.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.RushDaysInput.FormattingEnabled = true;
+            resources.ApplyResources(this.RushDaysInput, "RushDaysInput");
+            this.RushDaysInput.Name = "RushDaysInput";
+            this.RushDaysInput.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
             // 
-            // SurfaceMaterial
+            // SurfaceMaterialInput
             // 
-            resources.ApplyResources(this.SurfaceMaterial, "SurfaceMaterial");
-            this.SurfaceMaterial.Name = "SurfaceMaterial";
+            resources.ApplyResources(this.SurfaceMaterialInput, "SurfaceMaterialInput");
+            this.SurfaceMaterialInput.Name = "SurfaceMaterialInput";
             // 
-            // NumDrawers
+            // NumDrawersInput
             // 
-            resources.ApplyResources(this.NumDrawers, "NumDrawers");
-            this.NumDrawers.Name = "NumDrawers";
+            resources.ApplyResources(this.NumDrawersInput, "NumDrawersInput");
+            this.NumDrawersInput.Name = "NumDrawersInput";
             // 
-            // DeskDepth
+            // DeskDepthInput
             // 
-            resources.ApplyResources(this.DeskDepth, "DeskDepth");
-            this.DeskDepth.Name = "DeskDepth";
+            resources.ApplyResources(this.DeskDepthInput, "DeskDepthInput");
+            this.DeskDepthInput.Name = "DeskDepthInput";
             // 
-            // DeskWidth
+            // DeskWidthInput
             // 
-            resources.ApplyResources(this.DeskWidth, "DeskWidth");
-            this.DeskWidth.Name = "DeskWidth";
+            resources.ApplyResources(this.DeskWidthInput, "DeskWidthInput");
+            this.DeskWidthInput.Name = "DeskWidthInput";
             // 
-            // CustomerName
+            // FirstNameInput
             // 
-            resources.ApplyResources(this.CustomerName, "CustomerName");
-            this.CustomerName.Name = "CustomerName";
+            resources.ApplyResources(this.FirstNameInput, "FirstNameInput");
+            this.FirstNameInput.Name = "FirstNameInput";
             // 
             // label5
             // 
@@ -108,35 +108,35 @@
             resources.ApplyResources(this.fullName, "fullName");
             this.fullName.Name = "fullName";
             // 
-            // textBox1
+            // LastNameInput
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
+            resources.ApplyResources(this.LastNameInput, "LastNameInput");
+            this.LastNameInput.Name = "LastNameInput";
             // 
-            // firstName
+            // firstNameLabel
             // 
-            resources.ApplyResources(this.firstName, "firstName");
-            this.firstName.Name = "firstName";
+            resources.ApplyResources(this.firstNameLabel, "firstNameLabel");
+            this.firstNameLabel.Name = "firstNameLabel";
             // 
-            // lastName
+            // lastNameLabel
             // 
-            resources.ApplyResources(this.lastName, "lastName");
-            this.lastName.Name = "lastName";
+            resources.ApplyResources(this.lastNameLabel, "lastNameLabel");
+            this.lastNameLabel.Name = "lastNameLabel";
             // 
             // AddQuote
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lastName);
-            this.Controls.Add(this.firstName);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.RushDays);
+            this.Controls.Add(this.lastNameLabel);
+            this.Controls.Add(this.firstNameLabel);
+            this.Controls.Add(this.LastNameInput);
+            this.Controls.Add(this.RushDaysInput);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.SurfaceMaterial);
-            this.Controls.Add(this.NumDrawers);
-            this.Controls.Add(this.DeskDepth);
-            this.Controls.Add(this.DeskWidth);
-            this.Controls.Add(this.CustomerName);
+            this.Controls.Add(this.SurfaceMaterialInput);
+            this.Controls.Add(this.NumDrawersInput);
+            this.Controls.Add(this.DeskDepthInput);
+            this.Controls.Add(this.DeskWidthInput);
+            this.Controls.Add(this.FirstNameInput);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -150,20 +150,20 @@
 
         #endregion
 
-        public System.Windows.Forms.ListBox RushDays;
+        public System.Windows.Forms.ListBox RushDaysInput;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox SurfaceMaterial;
-        private System.Windows.Forms.TextBox NumDrawers;
-        private System.Windows.Forms.TextBox DeskDepth;
-        private System.Windows.Forms.TextBox DeskWidth;
-        private System.Windows.Forms.TextBox CustomerName;
+        private System.Windows.Forms.TextBox SurfaceMaterialInput;
+        private System.Windows.Forms.TextBox NumDrawersInput;
+        private System.Windows.Forms.TextBox DeskDepthInput;
+        private System.Windows.Forms.TextBox DeskWidthInput;
+        private System.Windows.Forms.TextBox FirstNameInput;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label fullName;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label firstName;
-        private System.Windows.Forms.Label lastName;
+        private System.Windows.Forms.TextBox LastNameInput;
+        private System.Windows.Forms.Label firstNameLabel;
+        private System.Windows.Forms.Label lastNameLabel;
     }
 }

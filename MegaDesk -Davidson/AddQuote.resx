@@ -118,26 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="RushDays.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="RushDaysInput.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 352</value>
   </data>
-  <data name="RushDays.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RushDaysInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 43</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="RushDays.TabIndex" type="System.Int32, mscorlib">
+  <data name="RushDaysInput.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="&gt;&gt;RushDays.Name" xml:space="preserve">
-    <value>RushDays</value>
+  <data name="&gt;&gt;RushDaysInput.Name" xml:space="preserve">
+    <value>RushDaysInput</value>
   </data>
-  <data name="&gt;&gt;RushDays.Type" xml:space="preserve">
+  <data name="&gt;&gt;RushDaysInput.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;RushDays.Parent" xml:space="preserve">
+  <data name="&gt;&gt;RushDaysInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;RushDays.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RushDaysInput.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
@@ -170,109 +170,109 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="SurfaceMaterial.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SurfaceMaterialInput.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 310</value>
   </data>
-  <data name="SurfaceMaterial.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SurfaceMaterialInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
-  <data name="SurfaceMaterial.TabIndex" type="System.Int32, mscorlib">
+  <data name="SurfaceMaterialInput.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="&gt;&gt;SurfaceMaterial.Name" xml:space="preserve">
-    <value>SurfaceMaterial</value>
+  <data name="&gt;&gt;SurfaceMaterialInput.Name" xml:space="preserve">
+    <value>SurfaceMaterialInput</value>
   </data>
-  <data name="&gt;&gt;SurfaceMaterial.Type" xml:space="preserve">
+  <data name="&gt;&gt;SurfaceMaterialInput.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SurfaceMaterial.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SurfaceMaterialInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SurfaceMaterial.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SurfaceMaterialInput.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="NumDrawers.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="NumDrawersInput.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 244</value>
   </data>
-  <data name="NumDrawers.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="NumDrawersInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
-  <data name="NumDrawers.TabIndex" type="System.Int32, mscorlib">
+  <data name="NumDrawersInput.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="&gt;&gt;NumDrawers.Name" xml:space="preserve">
-    <value>NumDrawers</value>
+  <data name="&gt;&gt;NumDrawersInput.Name" xml:space="preserve">
+    <value>NumDrawersInput</value>
   </data>
-  <data name="&gt;&gt;NumDrawers.Type" xml:space="preserve">
+  <data name="&gt;&gt;NumDrawersInput.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NumDrawers.Parent" xml:space="preserve">
+  <data name="&gt;&gt;NumDrawersInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;NumDrawers.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;NumDrawersInput.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="DeskDepth.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="DeskDepthInput.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 186</value>
   </data>
-  <data name="DeskDepth.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DeskDepthInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
-  <data name="DeskDepth.TabIndex" type="System.Int32, mscorlib">
+  <data name="DeskDepthInput.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;DeskDepth.Name" xml:space="preserve">
-    <value>DeskDepth</value>
+  <data name="&gt;&gt;DeskDepthInput.Name" xml:space="preserve">
+    <value>DeskDepthInput</value>
   </data>
-  <data name="&gt;&gt;DeskDepth.Type" xml:space="preserve">
+  <data name="&gt;&gt;DeskDepthInput.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DeskDepth.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DeskDepthInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;DeskDepth.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DeskDepthInput.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="DeskWidth.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="DeskWidthInput.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 125</value>
   </data>
-  <data name="DeskWidth.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DeskWidthInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
-  <data name="DeskWidth.TabIndex" type="System.Int32, mscorlib">
+  <data name="DeskWidthInput.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="&gt;&gt;DeskWidth.Name" xml:space="preserve">
-    <value>DeskWidth</value>
+  <data name="&gt;&gt;DeskWidthInput.Name" xml:space="preserve">
+    <value>DeskWidthInput</value>
   </data>
-  <data name="&gt;&gt;DeskWidth.Type" xml:space="preserve">
+  <data name="&gt;&gt;DeskWidthInput.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DeskWidth.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DeskWidthInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;DeskWidth.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DeskWidthInput.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="CustomerName.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="FirstNameInput.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 68</value>
   </data>
-  <data name="CustomerName.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="FirstNameInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
-  <data name="CustomerName.TabIndex" type="System.Int32, mscorlib">
+  <data name="FirstNameInput.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;CustomerName.Name" xml:space="preserve">
-    <value>CustomerName</value>
+  <data name="&gt;&gt;FirstNameInput.Name" xml:space="preserve">
+    <value>FirstNameInput</value>
   </data>
-  <data name="&gt;&gt;CustomerName.Type" xml:space="preserve">
+  <data name="&gt;&gt;FirstNameInput.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CustomerName.Parent" xml:space="preserve">
+  <data name="&gt;&gt;FirstNameInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;CustomerName.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;FirstNameInput.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
@@ -425,85 +425,85 @@
   <data name="&gt;&gt;fullName.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LastNameInput.Location" type="System.Drawing.Point, System.Drawing">
     <value>386, 67</value>
   </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LastNameInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="LastNameInput.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
+  <data name="&gt;&gt;LastNameInput.Name" xml:space="preserve">
+    <value>LastNameInput</value>
   </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;LastNameInput.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LastNameInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LastNameInput.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="firstName.AutoSize" type="System.Boolean, mscorlib">
+  <data name="firstNameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="firstName.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="firstNameLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt, style=Bold</value>
   </data>
-  <data name="firstName.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="firstNameLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>235, 42</value>
   </data>
-  <data name="firstName.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="firstNameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 17</value>
   </data>
-  <data name="firstName.TabIndex" type="System.Int32, mscorlib">
+  <data name="firstNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
-  <data name="firstName.Text" xml:space="preserve">
+  <data name="firstNameLabel.Text" xml:space="preserve">
     <value>First</value>
   </data>
-  <data name="&gt;&gt;firstName.Name" xml:space="preserve">
-    <value>firstName</value>
+  <data name="&gt;&gt;firstNameLabel.Name" xml:space="preserve">
+    <value>firstNameLabel</value>
   </data>
-  <data name="&gt;&gt;firstName.Type" xml:space="preserve">
+  <data name="&gt;&gt;firstNameLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;firstName.Parent" xml:space="preserve">
+  <data name="&gt;&gt;firstNameLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;firstName.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;firstNameLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lastName.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lastNameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lastName.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lastNameLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt, style=Bold</value>
   </data>
-  <data name="lastName.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lastNameLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>383, 42</value>
   </data>
-  <data name="lastName.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lastNameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 17</value>
   </data>
-  <data name="lastName.TabIndex" type="System.Int32, mscorlib">
+  <data name="lastNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="lastName.Text" xml:space="preserve">
+  <data name="lastNameLabel.Text" xml:space="preserve">
     <value>Last</value>
   </data>
-  <data name="&gt;&gt;lastName.Name" xml:space="preserve">
-    <value>lastName</value>
+  <data name="&gt;&gt;lastNameLabel.Name" xml:space="preserve">
+    <value>lastNameLabel</value>
   </data>
-  <data name="&gt;&gt;lastName.Type" xml:space="preserve">
+  <data name="&gt;&gt;lastNameLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lastName.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lastNameLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lastName.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lastNameLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -516,7 +516,7 @@
     <value>800, 450</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Form2</value>
+    <value>Add Quote</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AddQuote</value>

@@ -8,13 +8,73 @@ namespace MegaDesk__Davidson
 {
     public class DeskQuote
     {
-        string CustomerName;
+        string FirstName;
+        string LastName;
         float DeskWidth;
         float DeskDepth;
         int NumDrawers;
         string SurfaceMaterial;
         int RushDays;
         float QuotePrice;
+
+
+        public DeskQuote(string firstName, string lastName, float width, float depth, int drawers, string material, int rush)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            DeskWidth = width;
+            DeskDepth = depth;
+            NumDrawers = drawers;
+            SurfaceMaterial = material;
+            RushDays = rush;
+        }
+
+        public string getFirstName()
+        {
+            return FirstName;
+        }
+
+        public string getLastName()
+        {
+            return LastName;
+        }
+
+        public float getDeskWidth()
+        {
+            return DeskWidth;
+        }
+
+        public float getDeskDepth()
+        {
+            return DeskDepth;
+        }
+
+        public int getNumDrawers()
+        {
+            return NumDrawers;
+        }
+
+        public string getSurfaceMaterial()
+        {
+            return SurfaceMaterial;
+        }
+
+        public int getRushDays()
+        {
+            return RushDays;
+        }
+
+        public float getQuotePrice()
+        {
+            return QuotePrice;
+        }
+
+        public void setQuotePrice(float price)
+        {
+            QuotePrice = price;
+        }
+        
+        
 
         public void calcShipping()
         {
@@ -64,6 +124,10 @@ namespace MegaDesk__Davidson
                         QuotePrice += 40;
                     }
                 }
+                else if (RushDays == 14)
+                {
+                    QuotePrice += 0;
+                }
             }
         }
 
@@ -96,18 +160,9 @@ namespace MegaDesk__Davidson
             QuotePrice += NumDrawers * 50;
         }
 
-        public void calcSize()
-        {
-            if (DeskWidth < 24 || DeskWidth > 96 || DeskDepth < 12 || DeskDepth > 48)
-            {
-                QuotePrice = 0;
-            }
-            else
-            {
-                QuotePrice += DeskWidth * DeskDepth;
-            }
-        }
-
-
+      
     }
+
+
+    
 }
