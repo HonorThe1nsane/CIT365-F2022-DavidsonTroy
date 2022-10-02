@@ -8,14 +8,14 @@ namespace MegaDesk__Davidson
 {
     public class DeskQuote
     {
-        string FirstName;
-        string LastName;
-        float DeskWidth;
-        float DeskDepth;
-        int NumDrawers;
-        string SurfaceMaterial;
-        int RushDays;
-        float QuotePrice;
+        string FirstName{ get; set; }
+        string LastName { get; set; }
+        float DeskWidth { get; set; }
+        float DeskDepth { get; set; }
+        int NumDrawers { get; set; }
+        string SurfaceMaterial { get; set; }
+        int RushDays { get; set; }
+        float QuotePrice { get; set; }
 
 
         public DeskQuote(string firstName, string lastName, float width, float depth, int drawers, string material, int rush)
@@ -29,50 +29,6 @@ namespace MegaDesk__Davidson
             RushDays = rush;
         }
 
-        public string getFirstName()
-        {
-            return FirstName;
-        }
-
-        public string getLastName()
-        {
-            return LastName;
-        }
-
-        public float getDeskWidth()
-        {
-            return DeskWidth;
-        }
-
-        public float getDeskDepth()
-        {
-            return DeskDepth;
-        }
-
-        public int getNumDrawers()
-        {
-            return NumDrawers;
-        }
-
-        public string getSurfaceMaterial()
-        {
-            return SurfaceMaterial;
-        }
-
-        public int getRushDays()
-        {
-            return RushDays;
-        }
-
-        public float getQuotePrice()
-        {
-            return QuotePrice;
-        }
-
-        public void setQuotePrice(float price)
-        {
-            QuotePrice = price;
-        }
         
         
 
