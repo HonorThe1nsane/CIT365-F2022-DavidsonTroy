@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MegaDesk__Davidson
 {
@@ -35,6 +28,12 @@ namespace MegaDesk__Davidson
         private void cancelBtn_Click_1(object sender, EventArgs e)
         {
             MainMenu mainMenu = (MainMenu)Tag;
+            this.FirstNameInput.CausesValidation = false;
+            this.LastNameInput.CausesValidation = false;
+            this.DeskWidthInput.CausesValidation = false;
+            this.DeskDepthInput.CausesValidation = false;
+            this.NumDrawersInput.CausesValidation = false;
+            this.selectedMaterial.CausesValidation = false;
             mainMenu.Show();
             Close();
 
@@ -42,27 +41,7 @@ namespace MegaDesk__Davidson
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                MessageBox.Show(FirstNameInput.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                MessageBox.Show(LastNameInput.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                MessageBox.Show(DeskWidthInput.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                MessageBox.Show(DeskDepthInput.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                MessageBox.Show(NumDrawersInput.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
+            
 
         }
 
@@ -72,12 +51,13 @@ namespace MegaDesk__Davidson
             {
                 e.Cancel = true;
                 FirstNameInput.Focus();
-                errorProvider.SetError(FirstNameInput, "Please enter your first name");
+                errorFname.SetError(FirstNameInput, "Please enter your first name");
             } else
             {
                 e.Cancel = false;
-                errorProvider.SetError(FirstNameInput, null);
+                errorFname.SetError(FirstNameInput, null);
             }
+
 
         }
 
@@ -88,12 +68,12 @@ namespace MegaDesk__Davidson
             {
                 e.Cancel = true;
                 LastNameInput.Focus();
-                errorProvider.SetError(LastNameInput, "Please enter your last name");
+                errorLname.SetError(LastNameInput, "Please enter your last name");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider.SetError(LastNameInput, null);
+                errorLname.SetError(LastNameInput, null);
             }
 
         }
@@ -104,13 +84,36 @@ namespace MegaDesk__Davidson
             {
                 e.Cancel = true;
                 DeskWidthInput.Focus();
-                errorProvider.SetError(DeskWidthInput, "Please enter a width");
+                errorWDesk.SetError(DeskWidthInput, "Please enter a width");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider.SetError(DeskWidthInput, null);
+                errorWDesk.SetError(DeskWidthInput, null);
+
             }
+
+
+            if (DeskWidthInput.Text != null)
+            {
+                int number = Int32.Parse(DeskWidthInput.Text);
+                if(number < 24 || number > 96)
+                {
+                    e.Cancel = true;
+                    DeskWidthInput.Focus();
+                    errorWDesk.SetError(DeskWidthInput, "Please enter a width between 24 inches and 96 inches");
+
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorWDesk.SetError(DeskWidthInput, null);
+
+                }
+
+            }
+                
+            
         }
 
         private void DeskDepthInput_Validating(object sender, CancelEventArgs e)
@@ -119,12 +122,31 @@ namespace MegaDesk__Davidson
             {
                 e.Cancel = true;
                 DeskDepthInput.Focus();
-                errorProvider.SetError(DeskDepthInput, "Please enter your the depth");
+                errorDDesk.SetError(DeskDepthInput, "Please enter your the depth");
             }
+
             else
             {
                 e.Cancel = false;
-                errorProvider.SetError(DeskDepthInput, null);
+                errorDDesk.SetError(DeskDepthInput, null);
+            }
+            if (DeskDepthInput.Text != null)
+            {
+                int number = Int32.Parse(DeskDepthInput.Text);
+                if (number < 12 || number > 48)
+                {
+                    e.Cancel = true;
+                    DeskDepthInput.Focus();
+                    errorDDesk.SetError(DeskDepthInput, "Please enter a width between 12 inches and 48 inches");
+
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorDDesk.SetError(DeskDepthInput, null);
+
+                }
+
             }
 
         }
@@ -135,12 +157,64 @@ namespace MegaDesk__Davidson
             {
                 e.Cancel = true;
                 NumDrawersInput.Focus();
-                errorProvider.SetError(NumDrawersInput, "Please enter your the number of drawers");
+                errorNumDrawers.SetError(NumDrawersInput, "Please enter your the number of drawers");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider.SetError(NumDrawersInput, null);
+                errorNumDrawers.SetError(NumDrawersInput, null);
+            }
+
+            if (NumDrawersInput.Text != null)
+            {
+                int number = Int32.Parse(NumDrawersInput.Text);
+                if (number < 0 || number > 7)
+                {
+                    e.Cancel = true;
+                    NumDrawersInput.Focus();
+                    errorNumDrawers.SetError(NumDrawersInput, "Please enter a width between 12 inches and 48 inches");
+
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorNumDrawers.SetError(NumDrawersInput, null);
+
+                }
+
+            }
+
+
+        }
+
+        private void selectedMaterial_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedMaterial.Text))
+            {
+                e.Cancel = true;
+                selectedMaterial.Focus();
+                errorSurfMat.SetError(selectedMaterial, "Please select your desk material");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorSurfMat.SetError(selectedMaterial, null);
+            }
+
+        }
+
+        private void shipRushDays_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(shipRushDays.Text))
+            {
+                e.Cancel = true;
+                shipRushDays.Focus();
+                errorRushDays.SetError(shipRushDays, "Please select your the number of rush days or select none");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorRushDays.SetError(shipRushDays, null);
             }
 
         }

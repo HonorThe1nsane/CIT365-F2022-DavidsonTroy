@@ -45,10 +45,22 @@
             this.selectedMaterial = new System.Windows.Forms.ComboBox();
             this.shipRushDays = new System.Windows.Forms.ComboBox();
             this.submitBtn = new System.Windows.Forms.Button();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorFname = new System.Windows.Forms.ErrorProvider(this.components);
             this.FirstNameInput = new System.Windows.Forms.TextBox();
             this.LastNameInput = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.errorLname = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorWDesk = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorDDesk = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorNumDrawers = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorSurfMat = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorRushDays = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorFname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorLname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorWDesk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDDesk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNumDrawers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorSurfMat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorRushDays)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -122,12 +134,14 @@
             this.selectedMaterial.FormattingEnabled = true;
             resources.ApplyResources(this.selectedMaterial, "selectedMaterial");
             this.selectedMaterial.Name = "selectedMaterial";
+            this.selectedMaterial.Validating += new System.ComponentModel.CancelEventHandler(this.selectedMaterial_Validating);
             // 
             // shipRushDays
             // 
             this.shipRushDays.FormattingEnabled = true;
             resources.ApplyResources(this.shipRushDays, "shipRushDays");
             this.shipRushDays.Name = "shipRushDays";
+            this.shipRushDays.Validating += new System.ComponentModel.CancelEventHandler(this.shipRushDays_Validating);
             // 
             // submitBtn
             // 
@@ -136,9 +150,9 @@
             this.submitBtn.UseVisualStyleBackColor = true;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
-            // errorProvider
+            // errorFname
             // 
-            this.errorProvider.ContainerControl = this;
+            this.errorFname.ContainerControl = this;
             // 
             // FirstNameInput
             // 
@@ -152,6 +166,30 @@
             resources.ApplyResources(this.LastNameInput, "LastNameInput");
             this.LastNameInput.Name = "LastNameInput";
             this.LastNameInput.Validating += new System.ComponentModel.CancelEventHandler(this.LastNameInput_Validating);
+            // 
+            // errorLname
+            // 
+            this.errorLname.ContainerControl = this;
+            // 
+            // errorWDesk
+            // 
+            this.errorWDesk.ContainerControl = this;
+            // 
+            // errorDDesk
+            // 
+            this.errorDDesk.ContainerControl = this;
+            // 
+            // errorNumDrawers
+            // 
+            this.errorNumDrawers.ContainerControl = this;
+            // 
+            // errorSurfMat
+            // 
+            this.errorSurfMat.ContainerControl = this;
+            // 
+            // errorRushDays
+            // 
+            this.errorRushDays.ContainerControl = this;
             // 
             // AddQuote
             // 
@@ -175,7 +213,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.fullName);
             this.Name = "AddQuote";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorFname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorLname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorWDesk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDDesk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNumDrawers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorSurfMat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorRushDays)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,8 +241,14 @@
         private System.Windows.Forms.ComboBox selectedMaterial;
         private System.Windows.Forms.ComboBox shipRushDays;
         private System.Windows.Forms.Button submitBtn;
-        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ErrorProvider errorFname;
         private System.Windows.Forms.TextBox LastNameInput;
         private System.Windows.Forms.TextBox FirstNameInput;
+        private System.Windows.Forms.ErrorProvider errorLname;
+        private System.Windows.Forms.ErrorProvider errorWDesk;
+        private System.Windows.Forms.ErrorProvider errorDDesk;
+        private System.Windows.Forms.ErrorProvider errorNumDrawers;
+        private System.Windows.Forms.ErrorProvider errorSurfMat;
+        private System.Windows.Forms.ErrorProvider errorRushDays;
     }
 }
