@@ -39,23 +39,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.fullName = new System.Windows.Forms.Label();
-            this.firstNameLabel = new System.Windows.Forms.Label();
-            this.lastNameLabel = new System.Windows.Forms.Label();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.SelectedMaterial = new System.Windows.Forms.ComboBox();
             this.ShipRushDays = new System.Windows.Forms.ComboBox();
             this.submitBtn = new System.Windows.Forms.Button();
-            this.errorFname = new System.Windows.Forms.ErrorProvider(this.components);
-            this.FirstNameInput = new System.Windows.Forms.TextBox();
-            this.LastNameInput = new System.Windows.Forms.TextBox();
-            this.errorLname = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorCname = new System.Windows.Forms.ErrorProvider(this.components);
+            this.customerNameInput = new System.Windows.Forms.TextBox();
             this.errorWDesk = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorDDesk = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorNumDrawers = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorSurfMat = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorRushDays = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorFname)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorLname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCname)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorWDesk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorDDesk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNumDrawers)).BeginInit();
@@ -111,16 +106,6 @@
             resources.ApplyResources(this.fullName, "fullName");
             this.fullName.Name = "fullName";
             // 
-            // firstNameLabel
-            // 
-            resources.ApplyResources(this.firstNameLabel, "firstNameLabel");
-            this.firstNameLabel.Name = "firstNameLabel";
-            // 
-            // lastNameLabel
-            // 
-            resources.ApplyResources(this.lastNameLabel, "lastNameLabel");
-            this.lastNameLabel.Name = "lastNameLabel";
-            // 
             // cancelBtn
             // 
             resources.ApplyResources(this.cancelBtn, "cancelBtn");
@@ -149,25 +134,15 @@
             this.submitBtn.UseVisualStyleBackColor = true;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
-            // errorFname
+            // errorCname
             // 
-            this.errorFname.ContainerControl = this;
+            this.errorCname.ContainerControl = this;
             // 
-            // FirstNameInput
+            // customerNameInput
             // 
-            resources.ApplyResources(this.FirstNameInput, "FirstNameInput");
-            this.FirstNameInput.Name = "FirstNameInput";
-            this.FirstNameInput.Validating += new System.ComponentModel.CancelEventHandler(this.FirstNameInput_Validating);
-            // 
-            // LastNameInput
-            // 
-            resources.ApplyResources(this.LastNameInput, "LastNameInput");
-            this.LastNameInput.Name = "LastNameInput";
-            this.LastNameInput.Validating += new System.ComponentModel.CancelEventHandler(this.LastNameInput_Validating);
-            // 
-            // errorLname
-            // 
-            this.errorLname.ContainerControl = this;
+            resources.ApplyResources(this.customerNameInput, "customerNameInput");
+            this.customerNameInput.Name = "customerNameInput";
+            this.customerNameInput.Validating += new System.ComponentModel.CancelEventHandler(this.FirstNameInput_Validating);
             // 
             // errorWDesk
             // 
@@ -193,14 +168,11 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.LastNameInput);
-            this.Controls.Add(this.FirstNameInput);
+            this.Controls.Add(this.customerNameInput);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.ShipRushDays);
             this.Controls.Add(this.SelectedMaterial);
             this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.lastNameLabel);
-            this.Controls.Add(this.firstNameLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.NumDrawersInput);
             this.Controls.Add(this.DeskDepthInput);
@@ -211,8 +183,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.fullName);
             this.Name = "AddQuote";
-            ((System.ComponentModel.ISupportInitialize)(this.errorFname)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorLname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCname)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorWDesk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorDDesk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNumDrawers)).EndInit();
@@ -233,16 +204,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label fullName;
-        private System.Windows.Forms.Label firstNameLabel;
-        private System.Windows.Forms.Label lastNameLabel;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.ComboBox SelectedMaterial;
         private System.Windows.Forms.ComboBox ShipRushDays;
         private System.Windows.Forms.Button submitBtn;
-        private System.Windows.Forms.ErrorProvider errorFname;
-        private System.Windows.Forms.TextBox LastNameInput;
-        private System.Windows.Forms.TextBox FirstNameInput;
-        private System.Windows.Forms.ErrorProvider errorLname;
+        private System.Windows.Forms.ErrorProvider errorCname;
+        private System.Windows.Forms.TextBox customerNameInput;
         private System.Windows.Forms.ErrorProvider errorWDesk;
         private System.Windows.Forms.ErrorProvider errorDDesk;
         private System.Windows.Forms.ErrorProvider errorNumDrawers;

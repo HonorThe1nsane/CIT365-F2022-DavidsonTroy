@@ -8,221 +8,149 @@ namespace MegaDesk__Davidson
 {
     public class DeskQuote
     {
-        string FirstName{ get; set; }
-        string LastName { get; set; }
-        float DeskWidth { get; set; }
-        float DeskDepth { get; set; }
-        int NumDrawers { get; set; }
-        string SurfaceMaterial { get; set; }
-        int RushDays { get; set; }
+        public string CustomerName { get; set; }
+        public DateTime QuoteDate;
+        public float RushDays { get; set; }
+
+        private Desk newDesk = new Desk();
+
+        public float DrawerCost { get; set; }
+
         float QuotePrice { get; set; }
-        public int Width { get; }
-        public int Drawers { get; }
-        public string Material { get; }
-        public int Rush { get; }
+        public float RushCost { get; set; }
 
-        public DeskQuote(string firstName, string lastName, float width, float depth, int drawers, string material, int rush)
+
+
+        public float MaterialCost;
+        public float SurfaceArea;
+        public float SizeCost;
+
+        private const int BASE_PRICE = 200;
+        private const int SIZE_TRESHHOLD = 1000;
+        private const int PRICE_PER_DRAWER = 50;
+
+
+
+        private float CalcMaterialCost(string material)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            DeskWidth = width;
-            DeskDepth = depth;
-            NumDrawers = drawers;
-            SurfaceMaterial = material;
-            Rush = rush;
+            newDesk.DeskMaterial = material;
+
+            switch (newDesk.DeskMaterial)
+            {
+                case "Oak":
+                    MaterialCost = 200;
+                    break;
+
+                case "Laminate":
+                    MaterialCost = 100;
+                    break;
+
+                case "Pine":
+                    MaterialCost = 50;
+                    break;
+
+                case "Rosewood":
+                    MaterialCost = 300;
+                    break;
+
+                case "Veneer":
+                    MaterialCost = 125;
+                    break;
+            }
+            return MaterialCost;
         }
 
-        public DeskQuote(string firstName, string lastName, int width, int drawers, string material, int rush)
+
+        private float CalcSurfaceArea(float width, float depth)
         {
-            FirstName=firstName;
-            LastName=lastName;
-            Width=width;
-            Drawers=drawers;
-            Material=material;
-            Rush=rush;
-        }
-
-        public float GetQuotePrice()
-        {
-            float surfaceArea = DeskWidth * DeskDepth;
-            float basePrice = 200;
-            float surfaceAreaPrice = 0;
-            float drawerPrice = 50;
-            float materialPrice = 0;
-            float rushPrice = 0;
-            float total = 0;
-
-            if (surfaceArea > 1000)
-            {
-                surfaceAreaPrice = surfaceArea - 1000;
-            }
-
-            if (SurfaceMaterial == "Oak")
-            {
-                materialPrice = 200;
-            }
-            else if (SurfaceMaterial == "Laminate")
-            {
-                materialPrice = 100;
-            }
-            else if (SurfaceMaterial == "Pine")
-            {
-                materialPrice = 50;
-            }
-            else if (SurfaceMaterial == "Rosewood")
-            {
-                materialPrice = 300;
-            }
-            else if (SurfaceMaterial == "Veneer")
-            {
-                materialPrice = 125;
-            }
-
-            if (RushDays == 3)
-            {
-                if (surfaceArea < 1000)
-                {
-                    rushPrice = 60;
-                }
-                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                {
-                    rushPrice = 70;
-                }
-                else if (surfaceArea > 2000)
-                {
-                    rushPrice = 80;
-                }
-            }
-            else if (RushDays == 5)
-            {
-                if (surfaceArea < 1000)
-                {
-                    rushPrice = 40;
-                }
-                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                {
-                    rushPrice = 50;
-                }
-                else if (surfaceArea > 2000)
-                {
-                    rushPrice = 60;
-                }
-            }
-            else if (RushDays == 7)
-            {
-                if (surfaceArea < 1000)
-                {
-                    rushPrice = 30;
-                }
-                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                {
-                    rushPrice = 35;
-                }
-                else if (surfaceArea > 2000)
-                {
-                    rushPrice = 40;
-                }
-            }
-
-            total = basePrice + surfaceAreaPrice + (drawerPrice * NumDrawers) + materialPrice + rushPrice;
-
-            return total;
+            newDesk.DeskWidth = width;
+            newDesk.DeskDepth = depth;
+            SurfaceArea = newDesk.DeskWidth * newDesk.DeskDepth;
+            return SurfaceArea;
         }
 
 
 
 
+        private float calSurfaceAreaCost(float SurfaceArea)
+        {
+            if (SurfaceArea <= 1000)
+            {
+                SizeCost = SIZE_TRESHHOLD;
+            }
+            else
+            {
+                SizeCost = SIZE_TRESHHOLD + (SurfaceArea - SIZE_TRESHHOLD);
+            }
 
-        public float calcShipping()
-        {
-            {
-                if (RushDays == 3)
-                {
-                    if (DeskWidth * DeskDepth < 1000)
-                    {
-                        QuotePrice += 60;
-                    }
-                    else if (DeskWidth * DeskDepth >= 1000 && DeskWidth * DeskDepth <= 2000)
-                    {
-                        QuotePrice += 70;
-                    }
-                    else if (DeskWidth * DeskDepth > 2000)
-                    {
-                        QuotePrice += 80;
-                    }
-                }
-                else if (RushDays == 5)
-                {
-                    if (DeskWidth * DeskDepth < 1000)
-                    {
-                        QuotePrice += 40;
-                    }
-                    else if (DeskWidth * DeskDepth >= 1000 && DeskWidth * DeskDepth <= 2000)
-                    {
-                        QuotePrice += 50;
-                    }
-                    else if (DeskWidth * DeskDepth > 2000)
-                    {
-                        QuotePrice += 60;
-                    }
-                }
-                else if (RushDays == 7)
-                {
-                    if (DeskWidth * DeskDepth < 1000)
-                    {
-                        QuotePrice += 30;
-                    }
-                    else if (DeskWidth * DeskDepth >= 1000 && DeskWidth * DeskDepth <= 2000)
-                    {
-                        QuotePrice += 35;
-                    }
-                    else if (DeskWidth * DeskDepth > 2000)
-                    {
-                        QuotePrice += 40;
-                    }
-                }
-                else if (RushDays == 14)
-                {
-                    QuotePrice += 0;
-                }
-            }
-            return QuotePrice;
-        }
-        
-        public float calcSurfaceMaterial()
-        {
-            if (SurfaceMaterial == "Oak")
-            {
-                QuotePrice += 200;
-            }
-            else if (SurfaceMaterial == "Laminate")
-            {
-                QuotePrice += 100;
-            }
-            else if (SurfaceMaterial == "Pine")
-            {
-                QuotePrice += 50;
-            }
-            else if (SurfaceMaterial == "Rosewood")
-            {
-                QuotePrice += 300;
-            }
-            else if (SurfaceMaterial == "Veneer")
-            {
-                QuotePrice += 125;
-            }
-            return QuotePrice;
+            return SizeCost;
         }
 
-        public float calcDrawers()
+
+        private float CalcRushORderCost(float RushDays, float SurfaceArea)
         {
-            QuotePrice += NumDrawers * 50;
-            return QuotePrice;
+            if (SurfaceArea<1000)
+            {
+                switch (RushDays)
+                {
+                    case 3:
+                        RushCost = 60;
+                        break;
+                    case 5:
+                        RushCost = 40;
+                        break;
+                    case 7:
+                        RushCost = 30;
+                        break;
+                }
+            }
+            else if (SurfaceArea < 2000)
+            {
+                switch (RushDays)
+                {
+                    case 3:
+                        RushCost = 70;
+                        break;
+                    case 5:
+                        RushCost = 50;
+                        break;
+                    case 7:
+                        RushCost = 35;
+                        break;
+                }
+            }
+            else if (SurfaceArea > 2000)
+            {
+                switch (RushDays)
+                {
+                    case 3:
+                        RushCost = 80;
+                        break;
+                    case 5:
+                        RushCost = 60;
+                        break;
+                    case 7:
+                        RushCost = 40;
+                        break;
+                }
+            }
+            return RushCost;
         }
 
-      
+        public DeskQuote()
+        {
+
+            DrawerCost = newDesk.NumDrawers * PRICE_PER_DRAWER;
+
+            QuotePrice = BASE_PRICE + SizeCost + DrawerCost + MaterialCost + RushCost;
+
+        }
+
+
+
+
     }
 
 
-    
+
 }

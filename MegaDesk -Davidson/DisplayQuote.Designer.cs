@@ -1,4 +1,6 @@
-﻿namespace MegaDesk__Davidson
+﻿using System.Drawing;
+
+namespace MegaDesk__Davidson
 {
     partial class DisplayQuote
     {
@@ -20,6 +22,9 @@
             base.Dispose(disposing);
         }
 
+     
+
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,6 +33,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.closeQuote = new System.Windows.Forms.Button();
             this.QuoteSummaryLabel = new System.Windows.Forms.Label();
             this.fullNamelbl = new System.Windows.Forms.Label();
@@ -37,16 +43,23 @@
             this.materialLabel = new System.Windows.Forms.Label();
             this.rushLabel = new System.Windows.Forms.Label();
             this.quoteTotalLabel = new System.Windows.Forms.Label();
-            this.firstNameQuote = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rushQuote = new System.Windows.Forms.Label();
-            this.lastNameQuote = new System.Windows.Forms.Label();
             this.widthQuote = new System.Windows.Forms.Label();
             this.depthQuote = new System.Windows.Forms.Label();
             this.drawersQuote = new System.Windows.Forms.Label();
             this.materialQuote = new System.Windows.Forms.Label();
             this.totalQuote = new System.Windows.Forms.Label();
+            this.customerNameQuote = new System.Windows.Forms.TextBox();
+            this.deskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deskBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deskQuoteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.deskBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // closeQuote
@@ -140,15 +153,6 @@
             this.quoteTotalLabel.TabIndex = 17;
             this.quoteTotalLabel.Text = "Total:";
             // 
-            // firstNameQuote
-            // 
-            this.firstNameQuote.AutoSize = true;
-            this.firstNameQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameQuote.Location = new System.Drawing.Point(158, 50);
-            this.firstNameQuote.Name = "firstNameQuote";
-            this.firstNameQuote.Size = new System.Drawing.Size(0, 15);
-            this.firstNameQuote.TabIndex = 18;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -170,24 +174,17 @@
             // rushQuote
             // 
             this.rushQuote.AutoSize = true;
+            this.rushQuote.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.deskQuoteBindingSource, "RushDays", true));
             this.rushQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rushQuote.Location = new System.Drawing.Point(158, 309);
             this.rushQuote.Name = "rushQuote";
             this.rushQuote.Size = new System.Drawing.Size(0, 15);
             this.rushQuote.TabIndex = 21;
             // 
-            // lastNameQuote
-            // 
-            this.lastNameQuote.AutoSize = true;
-            this.lastNameQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameQuote.Location = new System.Drawing.Point(246, 50);
-            this.lastNameQuote.Name = "lastNameQuote";
-            this.lastNameQuote.Size = new System.Drawing.Size(0, 15);
-            this.lastNameQuote.TabIndex = 22;
-            // 
             // widthQuote
             // 
             this.widthQuote.AutoSize = true;
+            this.widthQuote.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.deskBindingSource1, "DeskDepth", true));
             this.widthQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.widthQuote.Location = new System.Drawing.Point(158, 105);
             this.widthQuote.Name = "widthQuote";
@@ -197,6 +194,7 @@
             // depthQuote
             // 
             this.depthQuote.AutoSize = true;
+            this.depthQuote.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.deskBindingSource1, "DeskDepth", true));
             this.depthQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.depthQuote.Location = new System.Drawing.Point(158, 156);
             this.depthQuote.Name = "depthQuote";
@@ -206,6 +204,7 @@
             // drawersQuote
             // 
             this.drawersQuote.AutoSize = true;
+            this.drawersQuote.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.deskBindingSource1, "NumDrawers", true));
             this.drawersQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drawersQuote.Location = new System.Drawing.Point(158, 205);
             this.drawersQuote.Name = "drawersQuote";
@@ -215,6 +214,7 @@
             // materialQuote
             // 
             this.materialQuote.AutoSize = true;
+            this.materialQuote.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.deskBindingSource, "DeskMaterial", true));
             this.materialQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialQuote.Location = new System.Drawing.Point(158, 255);
             this.materialQuote.Name = "materialQuote";
@@ -230,21 +230,47 @@
             this.totalQuote.Size = new System.Drawing.Size(0, 15);
             this.totalQuote.TabIndex = 27;
             // 
+            // customerNameQuote
+            // 
+            this.customerNameQuote.BackColor = System.Drawing.SystemColors.Info;
+            this.customerNameQuote.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.customerNameQuote.Enabled = false;
+            this.customerNameQuote.Location = new System.Drawing.Point(161, 50);
+            this.customerNameQuote.Name = "customerNameQuote";
+            this.customerNameQuote.Size = new System.Drawing.Size(98, 13);
+            this.customerNameQuote.TabIndex = 28;
+            this.customerNameQuote.TextChanged += new System.EventHandler(this.customerNameQuote_TextChanged);
+            // 
+            // deskBindingSource
+            // 
+            this.deskBindingSource.DataSource = typeof(MegaDesk__Davidson.Desk);
+            // 
+            // deskBindingSource1
+            // 
+            this.deskBindingSource1.DataSource = typeof(MegaDesk__Davidson.Desk);
+            // 
+            // deskQuoteBindingSource
+            // 
+            this.deskQuoteBindingSource.DataSource = typeof(MegaDesk__Davidson.DeskQuote);
+            // 
+            // deskQuoteBindingSource1
+            // 
+            this.deskQuoteBindingSource1.DataSource = typeof(MegaDesk__Davidson.DeskQuote);
+            // 
             // DisplayQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.customerNameQuote);
             this.Controls.Add(this.totalQuote);
             this.Controls.Add(this.materialQuote);
             this.Controls.Add(this.drawersQuote);
             this.Controls.Add(this.depthQuote);
             this.Controls.Add(this.widthQuote);
-            this.Controls.Add(this.lastNameQuote);
             this.Controls.Add(this.rushQuote);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.firstNameQuote);
             this.Controls.Add(this.quoteTotalLabel);
             this.Controls.Add(this.rushLabel);
             this.Controls.Add(this.materialLabel);
@@ -257,6 +283,10 @@
             this.Name = "DisplayQuote";
             this.Text = "Display Quote";
             this.Load += new System.EventHandler(this.DisplayQuote_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.deskBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,15 +302,18 @@
         private System.Windows.Forms.Label materialLabel;
         private System.Windows.Forms.Label rushLabel;
         private System.Windows.Forms.Label quoteTotalLabel;
-        private System.Windows.Forms.Label firstNameQuote;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label rushQuote;
-        private System.Windows.Forms.Label lastNameQuote;
         private System.Windows.Forms.Label widthQuote;
         private System.Windows.Forms.Label depthQuote;
         private System.Windows.Forms.Label drawersQuote;
         private System.Windows.Forms.Label materialQuote;
         private System.Windows.Forms.Label totalQuote;
+        private System.Windows.Forms.BindingSource deskQuoteBindingSource;
+        private System.Windows.Forms.BindingSource deskBindingSource1;
+        private System.Windows.Forms.BindingSource deskBindingSource;
+        private System.Windows.Forms.BindingSource deskQuoteBindingSource1;
+        public System.Windows.Forms.TextBox customerNameQuote;
     }
 }

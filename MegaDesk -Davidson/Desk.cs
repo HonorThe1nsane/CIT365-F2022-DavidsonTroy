@@ -8,28 +8,22 @@ namespace MegaDesk__Davidson
 {
     internal class Desk
     {
-        float SurfaceArea { get; set; }
-        float DeskWidth { get; set; }
-        float DeskDepth { get; set; }
-        int NumDrawers { get; set; }
+ 
+        public float DeskWidth { get; set; }
+        public float DeskDepth { get; set; }
+        public int NumDrawers { get; set; }
         
-        int RushDays { get; set; }
+
+        public string DeskMaterial { get; set; }
+
+        public const int MINWIDTH = 24;
+        public const int MAXWIDTH = 96;
+        public const int MINDEPTH = 28;
+        public const int MAXDEPTH = 48;
+        public const int MINNUMOFDRAWERS = 0;
+        public const int MAXNUMOFDRAWERS = 7;
 
 
-
-        public Desk(float width, float depth, int drawers, int rush)
-        {
-            DeskWidth = width;
-            DeskDepth = depth;
-            NumDrawers = drawers;
-            RushDays = rush;
-        }
-
-        public float GetSurfaceArea()
-        {
-            SurfaceArea = DeskWidth * DeskDepth;
-            return SurfaceArea;
-        }
 
     }
 

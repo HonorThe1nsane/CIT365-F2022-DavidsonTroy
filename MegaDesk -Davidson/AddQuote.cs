@@ -9,7 +9,10 @@ namespace MegaDesk__Davidson
 {
     public partial class AddQuote : Form
     {
-       
+
+        DeskQuote quoteInfo = new DeskQuote();
+        Desk deskInfo = new Desk();
+        DisplayQuote newInfo = new DisplayQuote();
 
 
         public AddQuote()
@@ -22,17 +25,18 @@ namespace MegaDesk__Davidson
         }
 
 
-    
 
-        
-      
+
+
+
+
 
 
         private void cancelBtn_Click_1(object sender, EventArgs e)
         {
             MainMenu mainMenu = (MainMenu)Tag;
-            this.FirstNameInput.CausesValidation = false;
-            this.LastNameInput.CausesValidation = false;
+            this.customerNameInput.CausesValidation = false;
+            
             this.DeskWidthInput.CausesValidation = false;
             this.DeskDepthInput.CausesValidation = false;
             this.NumDrawersInput.CausesValidation = false;
@@ -44,85 +48,46 @@ namespace MegaDesk__Davidson
         
         private void submitBtn_Click(object sender, EventArgs e)
         {
+            DeskQuote quoteInfo = new DeskQuote();
+            Desk deskInfo = new Desk();
+           
+
+
+            deskInfo.DeskWidth = Int32.Parse(DeskWidthInput.Text);
+            
+            deskInfo.DeskDepth = Int32.Parse(DeskDepthInput.Text);
+            deskInfo.NumDrawers = Int32.Parse(NumDrawersInput.Text);
+
+
             //Grab the info from the form
-            string firstName = FirstNameInput.Text;
-            string lastName = LastNameInput.Text;
-            int width = Int32.Parse(DeskWidthInput.Text);
-            int depth = Int32.Parse(DeskDepthInput.Text);
-            int drawers = Int32.Parse(NumDrawersInput.Text);
-            string material = SelectedMaterial.Text;
-            int rush = 0;
+            DisplayQuote newInfo = new DisplayQuote();
+            quoteInfo.CustomerName = customerNameInput.Text;
+
+            newInfo.customerName = customerNameInput.Text;
+
+            deskInfo.DeskWidth = Int32.Parse(DeskWidthInput.Text);
+            deskInfo.DeskDepth = Int32.Parse(DeskDepthInput.Text);
+            deskInfo.NumDrawers = Int32.Parse(NumDrawersInput.Text);
+             deskInfo.DeskMaterial = SelectedMaterial.Text;
+             quoteInfo.RushDays = 0;
             if (ShipRushDays.Text == "Three" )
             {
-                rush = 3;
+                quoteInfo.RushDays = 3;
 
             }
             else if(ShipRushDays.Text == "Five")
             {
-                rush = 5;
+                quoteInfo.RushDays = 5;
             }
             else if(ShipRushDays.Text == "Seven")
             {
-                rush = 7;
+                quoteInfo.RushDays = 7;
             }
             else
             {
-                rush = 14;
+                quoteInfo.RushDays = 14;
             }
 
-           
-
-
-
-            Desk desk = new Desk(width, depth, drawers, rush);
-            float surfaceArea = desk.GetSurfaceArea();
-
-            
-
-
-            //process data
-            DeskQuote newQuote = new DeskQuote(firstName, lastName, width, drawers, material, rush);
-            
-            float quotePrice = newQuote.GetQuotePrice();
-            float shipPrice = newQuote.calcShipping();
-            float calMaterialPrice = newQuote.calcSurfaceMaterial();
-            float drawerPrice = newQuote.calcDrawers();
-
-            
-
-
-            
-          /*  using (DisplayQuote displayQuote = new DisplayQuote())
-            {
-                if (displayQuote.ShowDialog() == DialogResult.OK)
-                {
-                    firstName = displayQuote.FirstName;
-                }
-                if (displayQuote.ShowDialog() == DialogResult.OK)
-                {
-                    lastName = displayQuote.LastName;
-                }
-                if (displayQuote.ShowDialog() == DialogResult.OK)
-                {
-                    width = displayQuote.Width;
-                }
-                if (displayQuote.ShowDialog() == DialogResult.OK)
-                {
-                    depth = displayQuote.Depth;
-                }
-                if (displayQuote.ShowDialog() == DialogResult.OK)
-                {
-                    drawers = displayQuote.Drawers;
-                }
-                if (displayQuote.ShowDialog() == DialogResult.OK)
-                {
-                    material = displayQuote.Material;
-                }
-                if (displayQuote.ShowDialog() == DialogResult.OK)
-                {
-                    rush = displayQuote.Rush;
-                }
-            }*/
             var m = new DisplayQuote();
             m.Show();
             Close();
@@ -133,37 +98,22 @@ namespace MegaDesk__Davidson
         private void FirstNameInput_Validating(object sender, CancelEventArgs e)
         {
 
-            if (string.IsNullOrEmpty(FirstNameInput.Text))
+            if (string.IsNullOrEmpty(customerNameInput.Text))
             {
                 e.Cancel = true;
-                FirstNameInput.Focus();
-                errorFname.SetError(FirstNameInput, "Please enter your First Name");
+                customerNameInput.Focus();
+                errorCname.SetError(customerNameInput, "Please enter your First Name");
          
             }
             else
             {
                 e.Cancel = false;
-                errorLname.SetError(LastNameInput, null);
+                errorCname.SetError(customerNameInput, null);
 
             }
         }
 
-        private void LastNameInput_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(LastNameInput.Text))
-            {
-                e.Cancel = true;
-                LastNameInput.Focus();
-                errorLname.SetError(LastNameInput, "Please enter your Last Name");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorLname.SetError(LastNameInput, null);
-
-            }
-
-        }
+      
 
         private void DeskWidthInput_Validating(object sender, CancelEventArgs e)
         {
