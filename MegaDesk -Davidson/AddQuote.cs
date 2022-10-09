@@ -10,10 +10,7 @@ namespace MegaDesk__Davidson
     public partial class AddQuote : Form
     {
 
-        DeskQuote quoteInfo = new DeskQuote();
-        Desk deskInfo = new Desk();
-        DisplayQuote newInfo = new DisplayQuote();
-
+        //
 
         public AddQuote()
         {
@@ -26,17 +23,10 @@ namespace MegaDesk__Davidson
 
 
 
-
-
-
-
-
-
         private void cancelBtn_Click_1(object sender, EventArgs e)
         {
             MainMenu mainMenu = (MainMenu)Tag;
             this.customerNameInput.CausesValidation = false;
-            
             this.DeskWidthInput.CausesValidation = false;
             this.DeskDepthInput.CausesValidation = false;
             this.NumDrawersInput.CausesValidation = false;
@@ -45,52 +35,53 @@ namespace MegaDesk__Davidson
             Close();
 
         }
-        
+
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            DeskQuote quoteInfo = new DeskQuote();
-            Desk deskInfo = new Desk();
-           
-
-
-            deskInfo.DeskWidth = Int32.Parse(DeskWidthInput.Text);
-            
-            deskInfo.DeskDepth = Int32.Parse(DeskDepthInput.Text);
-            deskInfo.NumDrawers = Int32.Parse(NumDrawersInput.Text);
-
-
-            //Grab the info from the form
-            DisplayQuote newInfo = new DisplayQuote();
-            quoteInfo.CustomerName = customerNameInput.Text;
-
-            newInfo.customerName = customerNameInput.Text;
-
-            deskInfo.DeskWidth = Int32.Parse(DeskWidthInput.Text);
-            deskInfo.DeskDepth = Int32.Parse(DeskDepthInput.Text);
-            deskInfo.NumDrawers = Int32.Parse(NumDrawersInput.Text);
-             deskInfo.DeskMaterial = SelectedMaterial.Text;
-             quoteInfo.RushDays = 0;
-            if (ShipRushDays.Text == "Three" )
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                quoteInfo.RushDays = 3;
+                
+               
+                DeskQuote newQuote = new DeskQuote();
+                newQuote.CustomerName = customerNameInput.Text;
+                newQuote.newDesk.DeskWidth = Convert.ToInt32(DeskWidthInput.Text);
+                newQuote.newDesk.DeskDepth = Convert.ToInt32(DeskDepthInput.Text);
+                newQuote.newDesk.NumDrawers = Convert.ToInt32(NumDrawersInput.Text);
+                newQuote.newDesk.DeskMaterial = SelectedMaterial.SelectedItem.ToString();
+                DateTime dt = DateTime.Now;
 
-            }
-            else if(ShipRushDays.Text == "Five")
-            {
-                quoteInfo.RushDays = 5;
-            }
-            else if(ShipRushDays.Text == "Seven")
-            {
-                quoteInfo.RushDays = 7;
-            }
-            else
-            {
-                quoteInfo.RushDays = 14;
-            }
+                newQuote.QuoteDate = dt.ToString("MMMM dd, yyyy");
 
-            var m = new DisplayQuote();
-            m.Show();
-            Close();
+                if (ShipRushDays.Text == "Three")
+                {
+                    newQuote.RushDays = 3;
+
+                }
+                else if (ShipRushDays.Text == "Five")
+                {
+                    newQuote.RushDays = 5;
+                }
+                else if (ShipRushDays.Text == "Seven")
+                {
+                    newQuote.RushDays = 7;
+                }
+                else
+                {
+                    newQuote.RushDays = 14;
+                }
+                newQuote.CalcMaterialCost(newQuote.newDesk.DeskMaterial);
+                newQuote.CalcDrawerCost();
+                newQuote.CalcSurfaceArea(newQuote.newDesk.DeskWidth, newQuote.newDesk.DeskDepth);
+                newQuote.CalcSurfaceAreaCost(newQuote.SurfaceArea);
+                newQuote.CalcRushOrderCost(newQuote.RushDays, newQuote.SurfaceArea);
+
+                newQuote.QuotePrice = newQuote.CalcTotalCost(newQuote.SurfaceArea, newQuote.MaterialCost, newQuote.DrawerCost, newQuote.RushCost);
+                DisplayQuote displayQuote = new DisplayQuote(newQuote);
+                displayQuote.Tag = this;
+                displayQuote.Show(this);
+                Hide();
+            }
+   
 
 
         }

@@ -295,13 +295,13 @@
     <value>27, 186</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 24</value>
+    <value>177, 24</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Depth of Desk</value>
+    <value>Depth of Desk (in)</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -328,13 +328,13 @@
     <value>27, 125</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 24</value>
+    <value>175, 24</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Width of Desk</value>
+    <value>Width of Desk (in)</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>

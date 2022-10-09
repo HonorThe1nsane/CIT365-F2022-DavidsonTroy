@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace MegaDesk__Davidson
 {
-    internal class Desk
+     public class Desk
     {
  
         public float DeskWidth { get; set; }
         public float DeskDepth { get; set; }
         public int NumDrawers { get; set; }
-        
+
 
         public string DeskMaterial { get; set; }
+        /*public IList<Desk> DeskMaterials { get; set; }*/
 
         public const int MINWIDTH = 24;
         public const int MAXWIDTH = 96;

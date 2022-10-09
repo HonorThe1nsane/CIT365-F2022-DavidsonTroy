@@ -9,17 +9,17 @@ namespace MegaDesk__Davidson
     public class DeskQuote
     {
         public string CustomerName { get; set; }
-        public DateTime QuoteDate;
+        public string QuoteDate;
         public float RushDays { get; set; }
 
-        private Desk newDesk = new Desk();
+        public Desk newDesk = new Desk();
 
         public float DrawerCost { get; set; }
 
-        float QuotePrice { get; set; }
+        public float QuotePrice { get; set; }
         public float RushCost { get; set; }
 
-
+        
 
         public float MaterialCost;
         public float SurfaceArea;
@@ -31,10 +31,10 @@ namespace MegaDesk__Davidson
 
 
 
-        private float CalcMaterialCost(string material)
+        public float CalcMaterialCost(string material)
         {
             newDesk.DeskMaterial = material;
-
+            
             switch (newDesk.DeskMaterial)
             {
                 case "Oak":
@@ -61,7 +61,7 @@ namespace MegaDesk__Davidson
         }
 
 
-        private float CalcSurfaceArea(float width, float depth)
+        public float CalcSurfaceArea(float width, float depth)
         {
             newDesk.DeskWidth = width;
             newDesk.DeskDepth = depth;
@@ -72,7 +72,7 @@ namespace MegaDesk__Davidson
 
 
 
-        private float calSurfaceAreaCost(float SurfaceArea)
+        public float CalcSurfaceAreaCost(float SurfaceArea)
         {
             if (SurfaceArea <= 1000)
             {
@@ -87,7 +87,7 @@ namespace MegaDesk__Davidson
         }
 
 
-        private float CalcRushORderCost(float RushDays, float SurfaceArea)
+        public float CalcRushOrderCost(float RushDays, float SurfaceArea)
         {
             if (SurfaceArea<1000)
             {
@@ -136,6 +136,22 @@ namespace MegaDesk__Davidson
             }
             return RushCost;
         }
+        public float CalcDrawerCost()
+        {
+            DrawerCost = newDesk.NumDrawers * PRICE_PER_DRAWER;
+            return DrawerCost;
+        }
+
+        public float CalcTotalCost(float SurfaceArea, float MaterialCost, float DrawerCost, float RushCost)
+        {
+            QuotePrice = BASE_PRICE + SurfaceArea + MaterialCost + DrawerCost + RushCost;
+            return QuotePrice;
+        }
+
+        /*internal static object CalculateQuote(object width, object depth, object drawers, object material, object rushDays)
+        {
+            throw new NotImplementedException();
+        }*/
 
         public DeskQuote()
         {
@@ -146,6 +162,7 @@ namespace MegaDesk__Davidson
 
         }
 
+       
 
 
 

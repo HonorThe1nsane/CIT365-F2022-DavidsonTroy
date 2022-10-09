@@ -28,10 +28,10 @@ namespace MegaDesk__Davidson
 
         private void viewQuote_Click(object sender, EventArgs e)
         {
-            DisplayQuote displayQuoteForm = new DisplayQuote();
+            /*DisplayQuote displayQuoteForm = new DisplayQuote();
             displayQuoteForm.Tag = this;
             displayQuoteForm.Show(this);
-            Hide();
+            Hide();*/
         }
 
         private void searchQuotes_Click(object sender, EventArgs e)
@@ -44,7 +44,12 @@ namespace MegaDesk__Davidson
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
