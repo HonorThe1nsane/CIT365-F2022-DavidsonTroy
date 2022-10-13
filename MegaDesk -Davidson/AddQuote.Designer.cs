@@ -118,6 +118,7 @@
             this.SelectedMaterial.FormattingEnabled = true;
             resources.ApplyResources(this.SelectedMaterial, "SelectedMaterial");
             this.SelectedMaterial.Name = "SelectedMaterial";
+            this.SelectedMaterial.SelectedIndexChanged += new System.EventHandler(this.SelectedMaterial_SelectedIndexChanged);
             this.SelectedMaterial.Validating += new System.ComponentModel.CancelEventHandler(this.selectedMaterial_Validating);
             // 
             // ShipRushDays
@@ -125,6 +126,7 @@
             this.ShipRushDays.FormattingEnabled = true;
             resources.ApplyResources(this.ShipRushDays, "ShipRushDays");
             this.ShipRushDays.Name = "ShipRushDays";
+            this.ShipRushDays.SelectedIndexChanged += new System.EventHandler(this.ShipRushDays_SelectedIndexChanged);
             this.ShipRushDays.Validating += new System.ComponentModel.CancelEventHandler(this.shipRushDays_Validating);
             // 
             // submitBtn

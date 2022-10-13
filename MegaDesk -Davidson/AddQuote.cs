@@ -230,6 +230,16 @@ namespace MegaDesk__Davidson
         {
 
         }
+
+        private void SelectedMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShipRushDays_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public enum shipDays

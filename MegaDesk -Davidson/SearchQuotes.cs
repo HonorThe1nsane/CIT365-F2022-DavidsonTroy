@@ -15,6 +15,12 @@ namespace MegaDesk__Davidson
         public SearchQuotes()
         {
             InitializeComponent();
+            selectedMaterial.DataSource = Enum.GetValues(typeof(SurfaceMaterial));
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

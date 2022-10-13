@@ -14,6 +14,7 @@ using System.Xml.Linq;
 using Newtonsoft.Json;
 
 
+
 namespace MegaDesk__Davidson
 {
     public partial class DisplayQuote : Form
@@ -38,8 +39,6 @@ namespace MegaDesk__Davidson
 
         private void DisplayQuote_Load(object sender , EventArgs e)
         {
-            
-
             customerNameQuote.Text = deskQuote.CustomerName;
             widthQuote.Text = deskQuote.newDesk.DeskWidth.ToString();
             depthQuote.Text = deskQuote.newDesk.DeskDepth.ToString();
@@ -48,9 +47,6 @@ namespace MegaDesk__Davidson
             rushQuote.Text = deskQuote.RushDays.ToString();
             totalQuote.Text = "$ " + deskQuote.QuotePrice.ToString();
             dateForQuote.Text = deskQuote.QuoteDate;
-
-
-
 
         }
 
@@ -94,8 +90,8 @@ namespace MegaDesk__Davidson
             };
         
             string s = JsonConvert.SerializeObject(newQuote, Formatting.Indented);
-            File.WriteAllText(@"quotes.json", s);
-            var writer = new StreamWriter(@"quotes.json");
+
+            var writer = new StreamWriter(@"quotes.json", true);
             writer.Write(s);
             writer.Close();
             MessageBox.Show("Your order has been saved");
