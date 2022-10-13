@@ -1,0 +1,20 @@
+
+[
+  {
+    "QuoteDate": "October 13, 2022",
+    "newDesk": {
+      "DeskWidth": 40.0,
+      "DeskDepth": 40.0,
+      "NumDrawers": 4,
+      "DeskMaterial": "Oak"
+    },
+    "MaterialCost": 200.0,
+    "SurfaceArea": 1600.0,
+    "SizeCost": 1600.0,
+    "CustomerName": "Troy",
+    "RushDays": 3.0,
+    "DrawerCost": 200.0,
+    "QuotePrice": 2270.0,
+    "RushCost": 70.0
+  }
+]

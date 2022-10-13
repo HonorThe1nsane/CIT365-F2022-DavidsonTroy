@@ -128,6 +128,7 @@
     <EmbeddedResource Include="ViewAllQuotes.resx">
       <DependentUpon>ViewAllQuotes.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Data\newQuotes.json" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Desk.datasource" />
     <None Include="Properties\DataSources\DeskQuote.datasource" />
@@ -159,5 +160,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

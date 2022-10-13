@@ -18,44 +18,41 @@ namespace MegaDesk__Davidson
         {
             InitializeComponent();
             sMaterial.DataSource = Enum.GetValues(typeof(SurfaceMaterial));
-        
-        
-            
-            
-
-
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)   
         {
-            string selectedMaterial = sMaterial.SelectedItem.ToString();
-            string[] lines = File.ReadAllLines(@"quotes.json");
-            List<DeskQuote> quotes = new List<DeskQuote>();
            
-            foreach (string line in lines)
-            {
-                quotes.Add(JsonConvert.DeserializeObject<DeskQuote>(line));
-            }
+            string material = sMaterial.SelectedItem.ToString();
+            var path = @"..\..\Data\newQuotes.json";
+            var quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(File.ReadAllText(path));
+            var filteredQuotes = quotes.Where(q => q.newDesk.DeskMaterial == material).ToList();
+            /*dataGridView1.DataSource = filteredQuotes;*/
+            
 
-            var filteredQuotes = quotes.Where(q => q.newDesk.DeskMaterial == selectedMaterial).ToList();
-
-            if (filteredQuotes.Count > 0)
+            int count = filteredQuotes.Count;
+            if (count == 0)
             {
-                dataGridView1.DataSource = filteredQuotes;
+                MessageBox.Show("No quotes found for this material");
             }
             else
             {
-                MessageBox.Show("No quotes found for the selected material");
+                dataGridView1.DataSource = filteredQuotes;
             }
 
-            dataGridView1.DataSource = filteredQuotes;
-
         }
+      
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void closeSearch_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Show();
+            Close();
         }
     }
 }
