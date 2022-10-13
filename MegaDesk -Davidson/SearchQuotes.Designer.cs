@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.selectedMaterial = new System.Windows.Forms.ComboBox();
+            this.sMaterial = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // selectedMaterial
+            // sMaterial
             // 
-            this.selectedMaterial.FormattingEnabled = true;
-            this.selectedMaterial.Location = new System.Drawing.Point(186, 9);
-            this.selectedMaterial.Name = "selectedMaterial";
-            this.selectedMaterial.Size = new System.Drawing.Size(121, 21);
-            this.selectedMaterial.TabIndex = 0;
-            this.selectedMaterial.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.sMaterial.FormattingEnabled = true;
+            this.sMaterial.Location = new System.Drawing.Point(186, 9);
+            this.sMaterial.Name = "sMaterial";
+            this.sMaterial.Size = new System.Drawing.Size(121, 21);
+            this.sMaterial.TabIndex = 0;
+            this.sMaterial.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -60,6 +60,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(715, 337);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // SearchQuotes
             // 
@@ -68,7 +69,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.selectedMaterial);
+            this.Controls.Add(this.sMaterial);
             this.Name = "SearchQuotes";
             this.Text = "Search Quotes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -79,7 +80,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox selectedMaterial;
+        private System.Windows.Forms.ComboBox sMaterial;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
