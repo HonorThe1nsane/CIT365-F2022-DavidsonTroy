@@ -28,10 +28,10 @@ namespace MegaDesk__Davidson
 
         private void viewQuote_Click(object sender, EventArgs e)
         {
-            /*DisplayQuote displayQuoteForm = new DisplayQuote();
-            displayQuoteForm.Tag = this;
-            displayQuoteForm.Show(this);
-            Hide();*/
+            ViewAllQuotes viewAllQuotes = new ViewAllQuotes();
+            viewAllQuotes.Tag = this;
+            viewAllQuotes.Show(this);
+            Hide();
         }
 
         private void searchQuotes_Click(object sender, EventArgs e)

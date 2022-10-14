@@ -16,7 +16,7 @@ namespace MegaDesk__Davidson
 
 
         public string DeskMaterial { get; set; }
-        /*public IList<Desk> DeskMaterials { get; set; }*/
+      
 
         public const int MINWIDTH = 24;
         public const int MAXWIDTH = 96;
