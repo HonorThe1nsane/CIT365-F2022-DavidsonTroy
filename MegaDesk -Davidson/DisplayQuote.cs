@@ -71,39 +71,17 @@ namespace MegaDesk__Davidson
         public void saveOrder_Click(object sender, EventArgs e)
         {
 
-
-            var newQuote = new List<DeskQuote>
-            {
-                new DeskQuote
-                {
-                    CustomerName = deskQuote.CustomerName,
-                    QuoteDate = deskQuote.QuoteDate,
-                    RushDays = deskQuote.RushDays,
-                    newDesk = deskQuote.newDesk,
-                    DrawerCost = deskQuote.DrawerCost,
-                    QuotePrice = deskQuote.QuotePrice,
-                    RushCost = deskQuote.RushCost,
-                    MaterialCost = deskQuote.MaterialCost,
-                    SurfaceArea = deskQuote.SurfaceArea,
-                    SizeCost = deskQuote.SizeCost
-                }
-            };
-        
-            string s = JsonConvert.SerializeObject(newQuote, Formatting.Indented);
-            var path =@"..\..\Data\newQuotes.json";
+            var path = @"..\..\Quotes\newQuotes.json";
             if (!File.Exists(path))
             {
                 File.Create(path);
             }
-            else
-            { 
-                var writer = new StreamWriter(path, true);
-                writer.Write(s);
-                writer.Close();
-            }
-            MessageBox.Show("Your order has been saved");
-            
-            
+            var quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(File.ReadAllText(path));
+            quotes.Add(deskQuote);
+            File.WriteAllText(path, JsonConvert.SerializeObject(quotes, Formatting.Indented));
+
+            MessageBox.Show("Quote saved");
+
 
         }
 
