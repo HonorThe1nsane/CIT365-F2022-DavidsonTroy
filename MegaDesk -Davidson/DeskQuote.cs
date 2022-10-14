@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MegaDesk__Davidson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaDesk__Davidson
+namespace MegaDesk__TeamAngeles
 {
     public class DeskQuote
     {
@@ -19,7 +20,7 @@ namespace MegaDesk__Davidson
         public float QuotePrice { get; set; }
         public float RushCost { get; set; }
 
-        
+
 
         public float MaterialCost;
         public float SurfaceArea;
@@ -34,7 +35,7 @@ namespace MegaDesk__Davidson
         public float CalcMaterialCost(string material)
         {
             newDesk.DeskMaterial = material;
-            
+
             switch (newDesk.DeskMaterial)
             {
                 case "Oak":
@@ -76,11 +77,11 @@ namespace MegaDesk__Davidson
         {
             if (SurfaceArea <= 1000)
             {
-                SizeCost = SIZE_TRESHHOLD;
+                SizeCost = BASE_PRICE;
             }
             else
             {
-                SizeCost = SIZE_TRESHHOLD + (SurfaceArea - SIZE_TRESHHOLD);
+                SizeCost = BASE_PRICE + (SurfaceArea - SIZE_TRESHHOLD);
             }
 
             return SizeCost;
@@ -142,16 +143,12 @@ namespace MegaDesk__Davidson
             return DrawerCost;
         }
 
-        public float CalcTotalCost(float SurfaceArea, float MaterialCost, float DrawerCost, float RushCost)
+        public float CalcTotalCost(float MaterialCost, float DrawerCost, float RushCost)
         {
-            QuotePrice = BASE_PRICE + SurfaceArea + MaterialCost + DrawerCost + RushCost;
+            QuotePrice = SizeCost + MaterialCost + DrawerCost + RushCost;
             return QuotePrice;
         }
 
-        /*internal static object CalculateQuote(object width, object depth, object drawers, object material, object rushDays)
-        {
-            throw new NotImplementedException();
-        }*/
 
         public DeskQuote()
         {
@@ -162,7 +159,7 @@ namespace MegaDesk__Davidson
 
         }
 
-       
+
 
 
 
