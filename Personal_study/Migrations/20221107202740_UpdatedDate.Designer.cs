@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Personal_study.Data;
 
 namespace Personal_study.Migrations
 {
     [DbContext(typeof(Personal_studyContext))]
-    partial class Personal_studyContextModelSnapshot : ModelSnapshot
+    [Migration("20221107202740_UpdatedDate")]
+    partial class UpdatedDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -23,11 +23,16 @@ namespace Personal_study.Pages.Scriptures
         }
 
         public IList<Scripture_entry> Scripture_entry { get;set; }
-        [BindProperty(SupportsGet = true)]
+        
+        [BindProperty(SupportsGet = true)]  
+        
         public string SearchString { get; set; }
-        public SelectList Genres { get; set; }
+        
+        public SelectList ScriptureFind { get; set; }
         [BindProperty(SupportsGet = true)]
-        public string MovieGenre { get; set; }
+        
+        public string Scripture_entryScriptureFind { get; set; }
+        
 
         public async Task OnGetAsync()
         {

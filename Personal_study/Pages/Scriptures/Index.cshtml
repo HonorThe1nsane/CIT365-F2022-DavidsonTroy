@@ -1,5 +1,7 @@
-﻿@page
+﻿
+@page "{searchString?}"
 @model Personal_study.Pages.Scriptures.IndexModel
+
 
 @{
     ViewData["Title"] = "Index";
@@ -13,7 +15,7 @@
 <form>
     <p>
         Scripture Reference: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
+        <input type="submit" value="Find" />
     </p>
 </form>
 <table class="table">
