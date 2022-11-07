@@ -15,6 +15,7 @@ namespace Personal_study.Scripture_note
         [Display(Name = "Notes/Impressions")]
         [Required]
         public string scripture_note { get; set; }
+
         [Display(Name = "Date saved")]
         [Required]
         public string scripture_date { get; set; }

@@ -36,8 +36,8 @@ namespace Personal_study.Pages.Scriptures
             }
 
             Entry.scripture_date = getDate(Entry);
-
             _context.Scripture_entry.Add(Entry);
+
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
@@ -47,7 +47,7 @@ namespace Personal_study.Pages.Scriptures
 
         {
             DateTime dt = DateTime.Now;
-            entry.scripture_date = dt.ToString("MM/dd/yyyy");
+            entry.scripture_date = dt.ToString("MMMM dd, yyyy");
 
             return entry.scripture_date;
 
