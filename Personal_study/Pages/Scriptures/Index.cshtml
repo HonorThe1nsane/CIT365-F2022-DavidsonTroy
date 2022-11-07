@@ -1,0 +1,54 @@
+﻿@page
+@model Personal_study.Pages.Scriptures.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_reference)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Scripture_entry) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.scripture_reference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.scripture_text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.scripture_note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.scripture_date)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
