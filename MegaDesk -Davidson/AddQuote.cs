@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaDesk__TeamAngeles;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Net.NetworkInformation;
@@ -74,8 +75,9 @@ namespace MegaDesk__Davidson
                 newQuote.CalcSurfaceArea(newQuote.newDesk.DeskWidth, newQuote.newDesk.DeskDepth);
                 newQuote.CalcSurfaceAreaCost(newQuote.SurfaceArea);
                 newQuote.CalcRushOrderCost(newQuote.RushDays, newQuote.SurfaceArea);
+      
 
-                newQuote.QuotePrice = newQuote.CalcTotalCost(newQuote.SurfaceArea, newQuote.MaterialCost, newQuote.DrawerCost, newQuote.RushCost);
+                newQuote.QuotePrice = newQuote.CalcTotalCost( newQuote.MaterialCost, newQuote.DrawerCost, newQuote.RushCost);
                 DisplayQuote displayQuote = new DisplayQuote(newQuote);
                 displayQuote.Tag = this;
                 displayQuote.Show(this);
