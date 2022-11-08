@@ -22,36 +22,56 @@ namespace Personal_study.Pages.Scriptures
             _context = context;
         }
 
-        public IList<Scripture_entry> Scripture_entry { get;set; }
-        
-        [BindProperty(SupportsGet = true)]  
-        
-        public string SearchString { get; set; }
-        
-        public SelectList ScriptureFind { get; set; }
-        [BindProperty(SupportsGet = true)]
-        
-        public string Scripture_entryScriptureFind { get; set; }
+        public IList<Scripture_entry> Scripture_entry { get; set; } = default!;
         
 
-        public async Task OnGetAsync()
+        [BindProperty(SupportsGet = true)]  
+        
+        public string? SearchString { get; set; }
+        public string NameSort { get; set; }
+        public string DateSort { get; set; }
+        public string CurrentFilter { get; set; }
+        public string CurrentSort { get; set; }
+
+
+
+        public async Task OnGetAsync(string sortOrder)
         {
-            // Use LINQ to get list of genres.
-            IQueryable<string> genreQuery = from m in _context.Scripture_entry
-                                            orderby m.scripture_reference
-                                            select m.scripture_reference;
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "NameDesc" : "";
+            DateSort = sortOrder == "Date" ? "DateDesc" : "Date";
+
             var scriptures = from m in _context.Scripture_entry
                              select m;
+            switch (sortOrder)
+            {
+                case "DateSort":
+                    scriptures = scriptures.OrderBy(n => n.scripture_date);
+                    break;
+                case "DateDesc":
+                    scriptures = scriptures.OrderByDescending(n => n.scripture_date);
+                    break;
+                case "NameDesc":
+                    scriptures = scriptures.OrderByDescending(n => n.scripture_reference);
+                    break;
+                default:
+                    scriptures = scriptures.OrderBy(n => n.scripture_reference);
+                    break;
+            }
 
             if (!string.IsNullOrEmpty(SearchString))
             {
-                Scripture_entry = await _context.Scripture_entry.Where(m => m.scripture_reference.Contains(SearchString)).ToListAsync();
+                scriptures = scriptures.Where(s => (s.scripture_reference.Contains(SearchString)) || (s.scripture_text.Contains(SearchString)));
+
             }
-     
-            Scripture_entry = await _context.Scripture_entry.ToListAsync();
+            Scripture_entry = await scriptures.ToListAsync();
+            
+            
+
             
             
 
         }
+
+       
     }
 }

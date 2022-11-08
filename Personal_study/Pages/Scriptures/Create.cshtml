@@ -25,9 +25,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Entry.scripture_note" class="control-label"></label>
-                <input asp-for="Entry.scripture_note" class="form-control" />
+                <textArea asp-for="Entry.scripture_note" class="form-control" rows="4" ></textArea>
                 <span asp-validation-for="Entry.scripture_note" class="text-danger"></span>
             </div>
+			<br>
            @* <div class="form-group">
                 <label asp-for="Entry.scripture_date" class="control-label"></label>
                 <input asp-for="Entry.scripture_date" class="form-control" />

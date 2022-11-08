@@ -1,5 +1,5 @@
 ﻿
-@page "{searchString?}"
+@page 
 @model Personal_study.Pages.Scriptures.IndexModel
 
 
@@ -15,23 +15,28 @@
 <form>
     <p>
         Scripture Reference: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Find" />
+        <button type="submit" class="btn btn-outline-success" value="Filter">Filter</button>
     </p>
 </form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_reference)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_reference)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_text)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_note)
+               @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_note)
+                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_date)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    @Html.DisplayNameFor(model => model.Scripture_entry[0].scripture_date)
+                </a>
             </th>
             <th></th>
         </tr>
@@ -43,20 +48,20 @@
                 @Html.DisplayFor(modelItem => item.scripture_reference)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.scripture_text)
+                    <a asp-page="./Details" class="btn btn-link" asp-route-id="@item.ID">Scripture Text</a>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.scripture_note)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.scripture_date)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+                    <a asp-page="./Details" class="btn btn-link" asp-route-id="@item.ID">Note Details</a>
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.scripture_date)
+			</td>
+			<td>
+				<button type="button" class="btn btn-success"> <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a></button> |
+                <button type="button" class="btn btn-warning"> <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a></button>
+			</td>
+		</tr>
+		}
+	
     </tbody>
 </table>
