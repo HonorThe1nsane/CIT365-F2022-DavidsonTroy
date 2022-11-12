@@ -9,6 +9,8 @@ public class MovieGenreViewModel
     public SelectList? Genres { get; set; }
     public string? MovieGenre { get; set; }
     public string? SearchString { get; set; }
+    public string? SortOrder { get; set; }
 
     public string? ReleaseDate { get; set; }
+    public IFormFile? Image { get; set; }
 }

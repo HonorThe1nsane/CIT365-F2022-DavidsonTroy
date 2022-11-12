@@ -28,14 +28,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Movies![0].Title)
             </th>
-          @*  <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
-                    @Html.DisplayNameFor(model => model.Movies![0].ReleaseDate)
-                </a>
-            </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.Movies![0].ReleaseDate)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">Release Date</a>
             </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.Movies![0].ReleaseDate)
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Movies![0].Genre)
             </th>

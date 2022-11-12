@@ -48,7 +48,7 @@ public static class SeedData
                 {
                     Title = "Charly",
                     ReleaseDate = DateTime.Parse("2002-09-20"),
-                    Genre = "Comedy Drama",
+                    Genre = "Romance",
                     Rating = "PG",
                     Price = 2.22M
                 }
