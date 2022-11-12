@@ -17,9 +17,11 @@ namespace Personal_study.Pages
             _logger = logger;
         }
 
+
         public void OnGet()
         {
 
         }
+
     }
 }
