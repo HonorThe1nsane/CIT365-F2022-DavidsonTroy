@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AJAMCadetAcademy.Data;
 using AJAMCadetAcademy.Models;
-using static AJAMCadetAcademy.PaginatedList;
+
 
 namespace AJAMCadetAcademy.Controllers
 {
