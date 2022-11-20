@@ -1,7 +1,6 @@
 ﻿namespace AJAMCadetAcademy.Models
 {
-    public class Enrollment
-    {
+    
         public enum Grade
         {
             A, B, C, D, F
@@ -17,5 +16,5 @@
             public Course Course { get; set; }
             public Student Student { get; set; }
         }
-    }
+    
 }
