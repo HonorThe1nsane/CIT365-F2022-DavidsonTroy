@@ -43,6 +43,7 @@ namespace AJAMCadetAcademy.Data
             new Course{CourseID=3141,Title="ODST",Credits=4},
             new Course{CourseID=2021,Title="Heavy Machinary",Credits=3},
             new Course{CourseID=2042,Title="Cortana",Credits=4}
+
             };
             foreach (Course c in courses)
             {
