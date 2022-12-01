@@ -17,12 +17,12 @@ namespace AJAMCadetAcademy.Migrations
                 oldType: "nvarchar(max)",
                 oldNullable: true);
 
-            /*migrationBuilder.AddColumn<int>(
+            migrationBuilder.AddColumn<int>(
                 name: "DepartmentID",
                 table: "Course",
                 type: "int",
                 nullable: false,
-                defaultValue: 0);*/
+                defaultValue: 0);
 
             migrationBuilder.CreateTable(
                 name: "Instructor",
