@@ -3,10 +3,27 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AJAMCadetAcademy.Migrations
 {
-    public partial class ComplexDataModel : Migration
+    public partial class SchoolContextnew : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropColumn(
+                name: "FirstName",
+                table: "Student");
+
+            migrationBuilder.DropColumn(
+                name: "LastName",
+                table: "Student");
+
+            migrationBuilder.AlterColumn<int>(
+                name: "ID",
+                table: "Student",
+                type: "int",
+                nullable: false,
+                oldClrType: typeof(int),
+                oldType: "int")
+                .OldAnnotation("SqlServer:Identity", "1, 1");
+
             migrationBuilder.AlterColumn<string>(
                 name: "Title",
                 table: "Course",
@@ -17,26 +34,43 @@ namespace AJAMCadetAcademy.Migrations
                 oldType: "nvarchar(max)",
                 oldNullable: true);
 
-            /*migrationBuilder.AddColumn<int>(
+            migrationBuilder.AddColumn<int>(
                 name: "DepartmentID",
                 table: "Course",
                 type: "int",
                 nullable: false,
-                defaultValue: 0);*/
+                defaultValue: 0);
 
             migrationBuilder.CreateTable(
-                name: "Instructor",
+                name: "Person",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Person", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Instructor",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false),
                     HireDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Instructor", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Instructor_Person_ID",
+                        column: x => x.ID,
+                        principalTable: "Person",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -72,7 +106,8 @@ namespace AJAMCadetAcademy.Migrations
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Budget = table.Column<decimal>(type: "money", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    InstructorID = table.Column<int>(type: "int", nullable: true)
+                    InstructorID = table.Column<int>(type: "int", nullable: true),
+                    RowVersion = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -84,15 +119,6 @@ namespace AJAMCadetAcademy.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
-            migrationBuilder.Sql("INSERT INTO dbo.Department (Name, Budget, StartDate) VALUES ('Temp', 0.00, GETDATE())");
-            // Default value for FK points to department created above, with
-            // defaultValue changed to 1 in following AddColumn statement.
-
-            migrationBuilder.AddColumn<int>(
-                name: "DepartmentID",
-                table: "Course",
-                nullable: false,
-                defaultValue: 1);
 
             migrationBuilder.CreateTable(
                 name: "OfficeAssignment",
@@ -134,6 +160,14 @@ namespace AJAMCadetAcademy.Migrations
                 principalTable: "Department",
                 principalColumn: "DepartmentID",
                 onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Student_Person_ID",
+                table: "Student",
+                column: "ID",
+                principalTable: "Person",
+                principalColumn: "ID",
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -141,6 +175,10 @@ namespace AJAMCadetAcademy.Migrations
             migrationBuilder.DropForeignKey(
                 name: "FK_Course_Department_DepartmentID",
                 table: "Course");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Student_Person_ID",
+                table: "Student");
 
             migrationBuilder.DropTable(
                 name: "CourseAssignment");
@@ -154,6 +192,9 @@ namespace AJAMCadetAcademy.Migrations
             migrationBuilder.DropTable(
                 name: "Instructor");
 
+            migrationBuilder.DropTable(
+                name: "Person");
+
             migrationBuilder.DropIndex(
                 name: "IX_Course_DepartmentID",
                 table: "Course");
@@ -161,6 +202,31 @@ namespace AJAMCadetAcademy.Migrations
             migrationBuilder.DropColumn(
                 name: "DepartmentID",
                 table: "Course");
+
+            migrationBuilder.AlterColumn<int>(
+                name: "ID",
+                table: "Student",
+                type: "int",
+                nullable: false,
+                oldClrType: typeof(int),
+                oldType: "int")
+                .Annotation("SqlServer:Identity", "1, 1");
+
+            migrationBuilder.AddColumn<string>(
+                name: "FirstName",
+                table: "Student",
+                type: "nvarchar(50)",
+                maxLength: 50,
+                nullable: false,
+                defaultValue: "");
+
+            migrationBuilder.AddColumn<string>(
+                name: "LastName",
+                table: "Student",
+                type: "nvarchar(50)",
+                maxLength: 50,
+                nullable: false,
+                defaultValue: "");
 
             migrationBuilder.AlterColumn<string>(
                 name: "Title",

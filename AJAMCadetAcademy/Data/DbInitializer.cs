@@ -39,7 +39,10 @@ namespace AJAMCadetAcademy.Data
                     EnrollmentDate = DateTime.Parse("2005-09-01") }
             };
 
-            context.Students.AddRange(students);
+            foreach (Student s in students)
+            {
+                context.Students.Add(s);
+            }
             context.SaveChanges();
 
             var instructors = new Instructor[]
@@ -56,7 +59,10 @@ namespace AJAMCadetAcademy.Data
                     HireDate = DateTime.Parse("2004-02-12") }
             };
 
-            context.Instructors.AddRange(instructors);
+            foreach (Instructor i in instructors)
+            {
+                context.Instructors.Add(i);
+            }
             context.SaveChanges();
 
             var departments = new Department[]
@@ -75,7 +81,10 @@ namespace AJAMCadetAcademy.Data
                     InstructorID  = instructors.Single( i => i.LastName == "Kapoor").ID }
             };
 
-            context.Departments.AddRange(departments);
+            foreach (Department d in departments)
+            {
+                context.Departments.Add(d);
+            }
             context.SaveChanges();
            
 
@@ -125,7 +134,10 @@ namespace AJAMCadetAcademy.Data
                     Location = "Thompson 304" },
             };
 
-            context.OfficeAssignments.AddRange(officeAssignments);
+            foreach (OfficeAssignment o in officeAssignments)
+            {
+                context.OfficeAssignments.Add(o);
+            }
             context.SaveChanges();
 
             var courseInstructors = new CourseAssignment[]
@@ -164,7 +176,10 @@ namespace AJAMCadetAcademy.Data
                     },
             };
 
-            context.CourseAssignments.AddRange(courseInstructors);
+            foreach (CourseAssignment ci in courseInstructors)
+            {
+                context.CourseAssignments.Add(ci);
+            }
             context.SaveChanges();
             
             var enrollments = new Enrollment[]

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AJAMCadetAcademy.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20221127005631_Initial")]
-    partial class Initial
+    [Migration("20221214074218_SchoolContextnew")]
+    partial class SchoolContextnew
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
