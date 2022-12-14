@@ -4,14 +4,16 @@ using HaloAcademy.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HaloAcademy.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    partial class SchoolContextModelSnapshot : ModelSnapshot
+    [Migration("20221214230102_MaxLengthOnNames")]
+    partial class MaxLengthOnNames
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,8 +74,7 @@ namespace HaloAcademy.Migrations
 
                     b.Property<string>("FirstMidName")
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("FirstName");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("LastName")
                         .HasMaxLength(50)
