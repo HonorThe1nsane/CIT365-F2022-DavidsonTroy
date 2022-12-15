@@ -42,8 +42,8 @@ namespace HaloAcademy.Data
             }
              context.SaveChanges();
 
-             /*var instructors = new Instructor[]
-             {
+            var instructors = new Instructor[]
+            {
                  new Instructor { FirstMidName = "Kim",     LastName = "Abercrombie",
                      HireDate = DateTime.Parse("1995-03-11") },
                  new Instructor { FirstMidName = "Fadi",    LastName = "Fakhouri",
@@ -54,16 +54,16 @@ namespace HaloAcademy.Data
                      HireDate = DateTime.Parse("2001-01-15") },
                  new Instructor { FirstMidName = "Roger",   LastName = "Zheng",
                      HireDate = DateTime.Parse("2004-02-12") }
-             };
+            };
 
-             foreach (Instructor i in instructors)
-             {
-                 context.Instructors.Add(i);
-             }
-             context.SaveChanges();
+            foreach (Instructor i in instructors)
+            {
+                context.Instructors.Add(i);
+            }
+            context.SaveChanges();
 
-             var departments = new Department[]
-             {
+            var departments = new Department[]
+            {
                  new Department { Name = "SPARTAN",     Budget = 350000,
                      StartDate = DateTime.Parse("2007-09-01"),
                      InstructorID  = instructors.Single( i => i.LastName == "Abercrombie").ID },
@@ -76,15 +76,15 @@ namespace HaloAcademy.Data
                  new Department { Name = "AI",   Budget = 100000,
                      StartDate = DateTime.Parse("2007-09-01"),
                      InstructorID  = instructors.Single( i => i.LastName == "Kapoor").ID }
-             };
+            };
 
-             foreach (Department d in departments)
-             {
-                 context.Departments.Add(d);
-             }
-             context.SaveChanges();*/
+            foreach (Department d in departments)
+            {
+                context.Departments.Add(d);
+            }
+            context.SaveChanges();
 
-            var courses = new Course[]
+       /*     var courses = new Course[]
           {
             new Course{CourseID=1050,Title="SPARTAN-I",Credits=3},
             new Course{CourseID=4022,Title="SPARTAN-III",Credits=3},
@@ -98,10 +98,10 @@ namespace HaloAcademy.Data
             {
                 context.Courses.Add(c);
             }
-            context.SaveChanges();
+            context.SaveChanges();*/
 
-            /* var courses = new Course[]
-             {
+            var courses = new Course[]
+            {
                  new Course {CourseID = 1050, Title = "SPARTAN-II",      Credits = 3,
                      DepartmentID = departments.Single( s => s.Name == "SPARTAN").DepartmentID
                  },
@@ -123,18 +123,18 @@ namespace HaloAcademy.Data
                  new Course {CourseID = 2042, Title = "Cortana",     Credits = 4,
                      DepartmentID = departments.Single( s => s.Name == "AI").DepartmentID
                  },
-             };
+            };
 
-             foreach (Course c in courses)
-             {
-                 context.Courses.Add(c);
-             }
-             context.SaveChanges();
- */
+            foreach (Course c in courses)
+            {
+                context.Courses.Add(c);
+            }
+            context.SaveChanges();
 
 
-            /* var officeAssignments = new OfficeAssignment[]
-             {
+
+            var officeAssignments = new OfficeAssignment[]
+            {
                  new OfficeAssignment {
                      InstructorID = instructors.Single( i => i.LastName == "Fakhouri").ID,
                      Location = "Smith 17" },
@@ -144,16 +144,16 @@ namespace HaloAcademy.Data
                  new OfficeAssignment {
                      InstructorID = instructors.Single( i => i.LastName == "Kapoor").ID,
                      Location = "Thompson 304" },
-             };*/
+            };
 
-            /* foreach (OfficeAssignment o in officeAssignments)
-             {
-                 context.OfficeAssignments.Add(o);
-             }
-             context.SaveChanges();
+            foreach (OfficeAssignment o in officeAssignments)
+            {
+                context.OfficeAssignments.Add(o);
+            }
+            context.SaveChanges();
 
-             var courseInstructors = new CourseAssignment[]
-             {
+            var courseInstructors = new CourseAssignment[]
+            {
                  new CourseAssignment {
                      CourseID = courses.Single(c => c.Title == "SPARTAN-II" ).CourseID,
                      InstructorID = instructors.Single(i => i.LastName == "Kapoor").ID
@@ -186,15 +186,15 @@ namespace HaloAcademy.Data
                      CourseID = courses.Single(c => c.Title == "Cortana" ).CourseID,
                      InstructorID = instructors.Single(i => i.LastName == "Abercrombie").ID
                      },
-             };
+            };
 
-             foreach (CourseAssignment ci in courseInstructors)
-             {
-                 context.CourseAssignments.Add(ci);
-             }
-             context.SaveChanges();*/
+            foreach (CourseAssignment ci in courseInstructors)
+            {
+                context.CourseAssignments.Add(ci);
+            }
+            context.SaveChanges();
 
-            var enrollments = new Enrollment[]
+            /*var enrollments = new Enrollment[]
             {
             new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
             new Enrollment{StudentID=1,CourseID=4022,Grade=Grade.C},
@@ -214,8 +214,8 @@ namespace HaloAcademy.Data
                 context.Enrollments.Add(e);
             }
             context.SaveChanges();
-
-          /*  var enrollments = new Enrollment[]
+*/
+            var enrollments = new Enrollment[]
             {
                 new Enrollment {
                     StudentID = students.Single(s => s.LastName == "Alexander").ID,
@@ -284,7 +284,7 @@ namespace HaloAcademy.Data
                     context.Enrollments.Add(e);
                 }
             }
-            context.SaveChanges();*/
+            context.SaveChanges();
         }
     }
 }
