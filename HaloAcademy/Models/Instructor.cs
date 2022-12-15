@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HaloAcademy.Models
 {
-    public class Instructor
+    public class Instructor : Person
     {
         public int ID { get; set; }
 
